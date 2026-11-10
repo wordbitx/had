@@ -1,0 +1,18 @@
+// Public image paths. The files are the originals, served unoptimized
+// (see next.config.mjs) so the pixels are exactly as supplied.
+// The binaries live in public/images/ after scripts/decode-images.mjs
+// runs (prebuild/predev); the committed sources are the *.b64 files.
+export const IMG = {
+  logo: '/images/logo.png',
+  fourVarieties: '/images/four-varieties.webp',
+  foodHero: '/images/food-hero.webp',
+  flatlay: '/images/flatlay.webp',
+  trays: '/images/trays.webp',
+  duo: '/images/duo.webp',
+  mapBrazil: '/images/map-brazil.png',
+  cheesePull: '/images/cheese-pull.webp',
+  crispyRice: '/images/crispy-rice.webp',
+  potato: '/images/potato.webp',
+} as const;
+
+export type ImageKey = keyof typeof IMG;
