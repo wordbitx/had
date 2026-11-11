@@ -43,6 +43,15 @@ export default function StallPage() {
 <figure className="shot duo" role="img" aria-label="Potato corn dog and crispy rice corn dog on white trays against green and yellow">
                 <figcaption>Potato × crispy rice</figcaption>
               </figure>
+<figure className="shot mozza" role="img" aria-label="Mozzarella corn dog pulled apart with a long cheese stretch">
+                <figcaption>Mozzarella pull</figcaption>
+              </figure>
+<figure className="shot sauces" role="img" aria-label="Four corn dogs on a plate with ketchup, mustard and mayonnaise drizzles">
+                <figcaption>Sauce drizzle</figcaption>
+              </figure>
+<figure className="shot trayfries" role="img" aria-label="Corn dogs with toppings and fries in a wooden tray">
+                <figcaption>Tray &amp; fries</figcaption>
+              </figure>
 <figure className="shot grid crop-tl" role="img" aria-label="Potato corn dog covered in crispy diced potato">
                 <figcaption>The potato crunch</figcaption>
               </figure>
@@ -95,6 +104,18 @@ export default function StallPage() {
             <figure className="gallery-item reveal">
               <Image src={IMG.flatlay} width={2352} height={1008} alt="Overhead flat-lay of corn dogs, fries and small bowls of dipping sauces laid out on a light cloth" />
               <figcaption>The Full Spread<small>Corn dogs, fries and every sauce on the board.</small></figcaption>
+            </figure>
+            <figure className="gallery-item reveal">
+              <Image src={IMG.menuMozzarella} width={1920} height={1280} alt="Mozzarella corn dog pulled apart with a long cheese stretch, on green and yellow" />
+              <figcaption>Mozzarella Pull<small>Pulled apart in one long stretch, while it's still hot.</small></figcaption>
+            </figure>
+            <figure className="gallery-item reveal">
+              <Image src={IMG.menuSauces} width={1920} height={1280} alt="Four corn dogs on a plate with ketchup, mustard and mayonnaise drizzles, on green and yellow" />
+              <figcaption>Sauce Drizzle<small>Four classics, finished with the full zigzag.</small></figcaption>
+            </figure>
+            <figure className="gallery-item reveal">
+              <Image src={IMG.menuTrayFries} width={1920} height={1280} alt="Corn dogs with toppings and fries in a wooden tray, on green and yellow" />
+              <figcaption>Tray &amp; Fries<small>Corn dogs and fries, straight from the tray.</small></figcaption>
             </figure>
           </div>
           <div className="strip-cta">

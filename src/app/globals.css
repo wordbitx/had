@@ -228,28 +228,33 @@
       /* the topline also exists as an overlay on the photo — hidden on desktop */
       .hero-topline--photo{display:none}
       @media (max-width:820px){
-        /* mobile: ONE integrated banner. The photo is a band in flow (16:10)
-           with the topline overlaid on it, and the logo/name/tagline/pill
-           follow in a compact green section — no big empty green area.
-           The media query sits after the absolute rule on purpose, so
-           position:relative wins on mobile. */
-        .hero-media{position:relative;inset:auto;aspect-ratio:16/10}
-        .hero-media::after{
-          content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-          background:linear-gradient(180deg,rgba(0,35,18,0) 52%,rgba(0,35,18,.55) 100%);
+        /* mobile: ONE covered hero, like the desktop hero and like
+           Bunsik's banner. The photo is the hero background (absolute,
+           cover, ~4:5 tall) and the topline, logo, name, tagline and
+           pill are ALL overlaid ON the photo — there is no separate
+           green text block below the photo on mobile. The media query
+           sits after the absolute rule on purpose, so the cover rules
+           win on mobile. */
+        .hero{aspect-ratio:4/5;min-height:520px}
+        /* stronger scrim on mobile so the overlaid text reads on the photo */
+        .hero::before{
+          background:linear-gradient(180deg,rgba(0,35,18,.58) 0%,rgba(0,35,18,.16) 30%,rgba(0,35,18,.14) 55%,rgba(0,35,18,.72) 100%);
         }
-        /* topline moves onto the photo on mobile; the in-flow one is hidden */
-        .hero-topline--photo{
-          display:block;position:absolute;left:0;right:0;bottom:12px;z-index:2;
-          margin:0;text-align:center;
+        .hero-media{position:absolute;inset:0;aspect-ratio:auto}
+        /* the topline overlay on the photo band is gone — the in-flow
+           topline inside hero-inner is the one that shows, on the photo */
+        .hero-topline--photo{display:none}
+        .hero-inner{
+          position:absolute;inset:0;z-index:2;min-height:0;
+          justify-content:center;
+          padding:26px 20px 30px;
         }
-        .hero-inner .hero-topline{display:none}
-        .hero-inner{min-height:0;padding:16px 20px 24px}
-        .hero-logo{width:clamp(88px,24vw,112px);height:clamp(88px,24vw,112px);margin-top:2px}
-        .hero-script{margin-top:8px}
-        .hero-sub{margin-top:8px}
+        .hero-inner .hero-topline{display:block}
+        .hero-logo{width:clamp(88px,24vw,112px);height:clamp(88px,24vw,112px);margin-top:14px}
+        .hero-script{margin-top:10px}
+        .hero-sub{margin-top:10px}
         .hero-spacer{display:none}
-        .hero-pill{margin-top:16px}
+        .hero-pill{margin-top:18px}
       }
 
       /* ---------- H1 band ---------- */
@@ -473,6 +478,10 @@
       .shot.cheese{background-image:url('/images/cheese-pull.webp');background-size:cover;background-position:50% 0%}
       .shot.trays{background-image:url('/images/trays.webp');background-size:cover;background-position:50% 50%}
       .shot.duo{background-image:url('/images/duo.webp');background-size:cover;background-position:50% 50%}
+      /* new menu shots (Nov 2026) — premium self-made product photos */
+      .shot.mozza{background-image:url('/images/menu-mozzarella.webp');background-size:cover;background-position:50% 50%}
+      .shot.sauces{background-image:url('/images/menu-sauces.webp');background-size:cover;background-position:50% 50%}
+      .shot.trayfries{background-image:url('/images/menu-tray-fries.webp');background-size:cover;background-position:50% 50%}
       .menu-box .ph.photo{background-size:cover;background-position:50% 50%}
       .menu-photo-band{
         margin-top:34px;border:2px solid var(--line);border-radius:22px;overflow:hidden;
@@ -620,9 +629,11 @@
       @media (max-width:880px){
         .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
         .foot-brand{grid-column:1 / -1}
+        /* mobile footer is two rows of link columns: Explore + On the Menu
+           side by side, then The Promise full width below */
+        .foot-grid > div:last-child{grid-column:1 / -1}
       }
       @media (max-width:560px){
-        .foot-grid{grid-template-columns:1fr;gap:32px}
         footer.site{padding:54px 0 26px}
       }
 

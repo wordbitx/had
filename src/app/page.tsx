@@ -12,7 +12,7 @@ export default function HomePage() {
 
 
       
-      <section className="hero" aria-label="Three golden corn dogs with a long mozzarella cheese pull, on a green and yellow background"><div className="hero-media"><Image src={IMG.foodHero} alt="Three golden corn dogs with a long mozzarella cheese pull, on a green and yellow background" fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: '50% 55%' }} /><p className="hero-topline hero-topline--photo" aria-hidden="true">It&apos;s <b>Corn Dog</b> Day</p></div>
+      <section className="hero" aria-label="Three golden corn dogs with a long mozzarella cheese pull, on a green and yellow background"><div className="hero-media"><Image src={IMG.foodHero} alt="Three golden corn dogs with a long mozzarella cheese pull, on a green and yellow background" fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: '50% 55%' }} /></div>
         <div className="hero-inner">
           <p className="hero-topline">It's <b>Corn Dog</b> Day</p>
           <div className="hero-logo">
@@ -130,6 +130,15 @@ export default function HomePage() {
               </figure>
 <figure className="shot duo" role="img" aria-label="Potato corn dog and crispy rice corn dog on white trays against green and yellow">
                 <figcaption>Potato × crispy rice</figcaption>
+              </figure>
+<figure className="shot mozza" role="img" aria-label="Mozzarella corn dog pulled apart with a long cheese stretch">
+                <figcaption>Mozzarella pull</figcaption>
+              </figure>
+<figure className="shot sauces" role="img" aria-label="Four corn dogs on a plate with ketchup, mustard and mayonnaise drizzles">
+                <figcaption>Sauce drizzle</figcaption>
+              </figure>
+<figure className="shot trayfries" role="img" aria-label="Corn dogs with toppings and fries in a wooden tray">
+                <figcaption>Tray &amp; fries</figcaption>
               </figure>
 <figure className="shot grid crop-tl" role="img" aria-label="Potato corn dog covered in crispy diced potato">
                 <figcaption>The potato crunch</figcaption>
