@@ -285,6 +285,8 @@
       }
       .btn-blue{background:var(--blue);color:#fff;box-shadow:0 10px 20px -10px rgba(0,46,24,.55)}
       .btn-blue:hover{transform:translateY(-2px);box-shadow:0 14px 24px -10px rgba(0,46,24,.55)}
+      .btn-green{background:var(--blue);color:var(--yellow);box-shadow:0 10px 20px -10px rgba(0,46,24,.55)}
+      .btn-green:hover{transform:translateY(-2px);box-shadow:0 14px 24px -10px rgba(0,46,24,.55)}
       .btn-ghost{background:#fff;color:var(--navy);box-shadow:0 10px 20px -10px rgba(0,46,24,.4);border:2px solid var(--line)}
       .btn-ghost:hover{transform:translateY(-2px);box-shadow:0 14px 24px -10px rgba(0,46,24,.45)}
       .btn-yellow{background:var(--yellow);color:var(--navy);box-shadow:0 10px 20px -10px rgba(0,46,24,.45)}
@@ -307,10 +309,9 @@
       }
       .page-band p{font-size:1.1rem;font-weight:600;color:#2f4a3a;max-width:38rem;margin:14px auto 0}
 
-      /* ---------- flat-lay banner ---------- */
+      /* ---------- flat-lay banner — full image, never cropped ---------- */
       .flatlay{line-height:0;background:#f3ead9}
-      .flatlay img{width:100%;height:min(48vh,430px);object-fit:cover;object-position:50% 50%}
-      @media (max-width:700px){ .flatlay img{height:230px} }
+      .flatlay img{display:block;width:100%;max-width:1800px;height:auto;margin:0 auto}
 
       /* ---------- marquee ---------- */
       .marquee{background:var(--blue);color:#fff;overflow:hidden;padding:13px 0;border-bottom:4px solid var(--yellow)}
@@ -376,29 +377,32 @@
       .strip-card figcaption small{display:block;margin-top:5px;font-weight:700;font-size:.82rem;letter-spacing:.12em;color:#5a7263}
       .strip-cta{text-align:center;margin-top:40px}
 
-      /* ---------- menu page — premium boxes ---------- */
-      .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-      @media (max-width:880px){.menu-grid{grid-template-columns:1fr}}
+      /* ---------- menu page — dense compact grid (Bunsik-style) ----------
+         Small photo on top, name, one line. 4 across on desktop, 3 on
+         tablet, 2 on mobile — many products visible at once. */
+      .menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+      @media (max-width:1100px){.menu-grid{grid-template-columns:repeat(3,1fr)}}
+      @media (max-width:880px){.menu-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
       .menu-box{
-        background:var(--card);border:2px solid var(--line);border-radius:22px;overflow:hidden;
+        background:var(--card);border:2px solid var(--line);border-radius:18px;overflow:hidden;
         box-shadow:var(--shadow);
         display:flex;flex-direction:column;
       }
       .menu-box .ph{
-        aspect-ratio:16/9;background-repeat:no-repeat;background-color:#e8e2d2;
+        aspect-ratio:4/3;background-repeat:no-repeat;background-color:#e8e2d2;
         border-bottom:2px solid var(--line);
       }
-      .menu-box .body{padding:24px 26px 28px;display:flex;flex-direction:column;gap:8px;flex:1}
+      .menu-box .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:5px;flex:1}
       .menu-box .tag{
         align-self:flex-start;background:var(--yellow);color:var(--navy);font-weight:900;
-        font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
-        padding:5px 12px;border-radius:999px;border:2px solid var(--navy);
+        font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+        padding:3px 9px;border-radius:999px;border:2px solid var(--navy);
       }
-      .menu-box h3{font-size:1.75rem;font-weight:900;color:var(--blue)}
-      .menu-box p{margin:0;color:var(--muted);font-size:1rem}
+      .menu-box h3{font-size:1.12rem;font-weight:900;color:var(--blue);line-height:1.2}
+      .menu-box p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.45}
       .menu-box .go{
-        margin-top:auto;padding-top:10px;font-weight:800;color:var(--blue);
-        text-transform:uppercase;letter-spacing:.08em;font-size:.9rem;text-decoration:none;
+        margin-top:auto;padding-top:6px;font-weight:800;color:var(--blue);
+        text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;text-decoration:none;
       }
       .menu-box .go:hover{color:var(--blue-deep);text-decoration:underline}
       .menu-steps{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px}
@@ -415,6 +419,21 @@
       }
       .menu-list li:last-child{border-bottom:none;padding-bottom:2px}
       .menu-list .note{font-weight:600;font-size:.82rem;color:var(--muted);text-align:right;flex:none}
+
+      /* ---------- drinks sections (menu page) ---------- */
+      .drinks-section{margin-top:56px}
+      .drinks-section .section-head{margin-bottom:22px}
+      .drinks-grid{display:grid;grid-template-columns:minmax(300px,440px) 1fr;gap:28px;align-items:center}
+      @media (max-width:880px){.drinks-grid{grid-template-columns:1fr;gap:18px}}
+      .drinks-photo{margin:0;border-radius:18px;overflow:hidden;border:2px solid var(--line);box-shadow:var(--shadow);line-height:0}
+      .drinks-photo img{width:100%;height:auto;display:block}
+      .drinks-photos{display:grid;gap:16px}
+      .drinks-list{list-style:none;margin:0;padding:0;display:grid;gap:0}
+      .drinks-list li{display:flex;flex-direction:column;gap:2px;padding:13px 0;border-bottom:2px dashed var(--line)}
+      .drinks-list li:last-child{border-bottom:none;padding-bottom:2px}
+      .drinks-list li:first-child{padding-top:2px}
+      .drinks-list b{font-family:var(--font-archivo),sans-serif;font-weight:900;font-size:1.15rem;color:var(--blue)}
+      .drinks-list span{color:var(--muted);font-size:.95rem}
 
       /* ---------- builder ---------- */
       .builder{display:grid;grid-template-columns:1.5fr 1fr;gap:30px;align-items:start}

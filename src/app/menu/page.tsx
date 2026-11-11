@@ -14,7 +14,7 @@ export default function MenuPage() {
         <div className="wrap">
           <p className="topline">It's Corn Dog Day</p>
           <h1>The Menu</h1>
-          <p>Eight favourites on the menu — four coatings, five fillings, six ways to finish it. Everything below is exactly how it works at the stall — then build yours and watch it come together.</p>
+          <p>Eight favourites on the menu — four coatings, five fillings, six ways to finish it — plus cold drinks to go with them. Everything below is exactly how it works at the stall — then build yours and watch it come together.</p>
         </div>
       </section>
 
@@ -32,7 +32,7 @@ export default function MenuPage() {
               <div className="body">
                 <span className="tag">Extra Crunchy</span>
                 <h3>Potato Corn Dog</h3>
-                <p>Rolled in crispy diced potato before it hits the fryer — the loudest crunch on the menu, golden on every side.</p>
+                <p>Rolled in crispy diced potato — the loudest crunch on the menu.</p>
                 <a className="go" href="#build-anchor">Build it yours ↓</a>
               </div>
             </article>
@@ -41,7 +41,7 @@ export default function MenuPage() {
               <div className="body">
                 <span className="tag">The Original</span>
                 <h3>Classic Corn Dog</h3>
-                <p>The one that started it all. Smooth golden batter, fried until it shines, ready for the full sauce treatment.</p>
+                <p>Smooth golden batter, fried until it shines.</p>
                 <a className="go" href="#build-anchor">Build it yours ↓</a>
               </div>
             </article>
@@ -50,7 +50,7 @@ export default function MenuPage() {
               <div className="body">
                 <span className="tag">Street Favourite</span>
                 <h3>Ramen Noodle</h3>
-                <p>Wrapped in crushed ramen noodles for a wild, craggy crunch — the street-style favourite with the famous cheese pull.</p>
+                <p>Wrapped in crushed ramen noodles — wild, craggy crunch.</p>
                 <a className="go" href="#build-anchor">Build it yours ↓</a>
               </div>
             </article>
@@ -59,7 +59,7 @@ export default function MenuPage() {
               <div className="body">
                 <span className="tag">Light &amp; Crispy</span>
                 <h3>Crispy Rice</h3>
-                <p>Coated in puffed rice that crackles as it fries. Light, crisp and golden — with the same melty middle inside.</p>
+                <p>Puffed rice that crackles as it fries — light and crisp.</p>
                 <a className="go" href="#build-anchor">Build it yours ↓</a>
               </div>
             </article>
@@ -68,7 +68,7 @@ export default function MenuPage() {
               <div className="body">
                 <span className="tag">Maximum Cheese Pull</span>
                 <h3>Mozzarella Corn Dog</h3>
-                <p>Full mozzarella inside, pulled apart slow — the famous cheese pull, golden on the outside.</p>
+                <p>Full mozzarella inside — the famous cheese pull.</p>
                 <a className="go" href="#build-anchor">Build it yours ↓</a>
               </div>
             </article>
@@ -77,7 +77,7 @@ export default function MenuPage() {
               <div className="body">
                 <span className="tag">Fully Sauced</span>
                 <h3>Loaded Corn Dog</h3>
-                <p>Ketchup, mayonnaise and mustard drizzled over the top — the full sauce treatment, your way.</p>
+                <p>Ketchup, mayonnaise and mustard drizzled over the top.</p>
                 <a className="go" href="#build-anchor">Build it yours ↓</a>
               </div>
             </article>
@@ -86,7 +86,7 @@ export default function MenuPage() {
               <div className="body">
                 <span className="tag">The Full Tray</span>
                 <h3>Corn Dog &amp; Fries</h3>
-                <p>Golden corn dogs with crispy fries on the side, served fresh from the stall.</p>
+                <p>Golden corn dogs with crispy fries on the side.</p>
                 <a className="go" href="#build-anchor">Build it yours ↓</a>
               </div>
             </article>
@@ -95,7 +95,7 @@ export default function MenuPage() {
               <div className="body">
                 <span className="tag">Cheesy &amp; Rich</span>
                 <h3>Pizza-Style Corn Dog</h3>
-                <p>Melted mozzarella and tomato sauce over a golden corn dog — pizza flavours, street-food style.</p>
+                <p>Melted mozzarella and tomato sauce, street-food style.</p>
                 <a className="go" href="#build-anchor">Build it yours ↓</a>
               </div>
             </article>
@@ -132,6 +132,49 @@ export default function MenuPage() {
                 <li>Spicy Mayonnaise <span className="note">Hellmann's</span></li>
                 <li>Sweet Sugar <span className="note">The classic dusting</span></li>
                 <li>Sriracha Hot Chilli <span className="note">Brings the heat</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="drinks-section reveal">
+            <div className="section-head">
+              <span className="eyebrow">Drinks</span>
+              <h2>Soft Drinks</h2>
+              <p>Ice-cold drinks to go with your corn dog — all halal, no alcohol.</p>
+            </div>
+            <div className="drinks-grid">
+              <figure className="drinks-photo">
+                <Image src={IMG.drinksSoft} width={1920} height={1280} alt="Chilled soft drink cans and glasses of cola, lemon-lime and orange served with corn dogs" />
+              </figure>
+              <ul className="drinks-list">
+                <li><b>Cola</b><span>Classic cola, served ice cold.</span></li>
+                <li><b>Diet Cola</b><span>The same cola taste, no sugar.</span></li>
+                <li><b>Lemon-Lime</b><span>Crisp lemon-lime fizz, ice cold.</span></li>
+                <li><b>Orange</b><span>Sweet orange fizz, ice cold.</span></li>
+                <li><b>Still Water</b><span>Chilled still water.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="drinks-section reveal">
+            <div className="section-head">
+              <span className="eyebrow">From Brazil</span>
+              <h2>Brazilian Drinks</h2>
+              <p>Brazilian favourites to go with your corn dog — all halal, no alcohol.</p>
+            </div>
+            <div className="drinks-grid">
+              <div className="drinks-photos">
+                <figure className="drinks-photo">
+                  <Image src={IMG.drinksGuarana} width={1920} height={1280} alt="Chilled green bottle of guaraná soft drink with a glass of ice, served with corn dogs" />
+                </figure>
+                <figure className="drinks-photo">
+                  <Image src={IMG.drinksFreshJuice} width={1920} height={1280} alt="Fresh orange juice with ice and oranges, served with corn dogs" />
+                </figure>
+              </div>
+              <ul className="drinks-list">
+                <li><b>Guaraná</b><span>Brazil's own soft drink — sweet, fizzy, ice cold.</span></li>
+                <li><b>Fresh Orange Juice</b><span>Suco de laranja — freshly squeezed oranges.</span></li>
+                <li><b>Açaí Smoothie</b><span>Thick açaí berry smoothie, served cold.</span></li>
               </ul>
             </div>
           </div>

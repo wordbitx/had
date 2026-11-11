@@ -18,6 +18,9 @@ export const IMG = {
   menuTrayFries: '/images/menu-tray-fries.webp',
   menuRamen: '/images/menu-ramen.webp',
   menuPizzaStyle: '/images/menu-pizza-style.webp',
+  drinksSoft: '/images/drinks-soft.webp',
+  drinksGuarana: '/images/drinks-guarana.webp',
+  drinksFreshJuice: '/images/drinks-fresh-juice.webp',
 } as const;
 
 export type ImageKey = keyof typeof IMG;

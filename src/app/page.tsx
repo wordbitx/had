@@ -83,7 +83,7 @@ export default function HomePage() {
             </figure>
           </div>
           <div className="strip-cta">
-            <Link className="btn btn-yellow" href="/menu">View Menu</Link>
+            <Link className="btn btn-green" href="/menu">View Menu</Link>
           </div>
         </div>
       </section>
