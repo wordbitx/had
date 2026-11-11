@@ -3,13 +3,27 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IMG } from '@/lib/images';
 import { NAV_LINKS } from '@/lib/site';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+
+  // Lock body scroll while the drawer is open; Escape closes it.
+  useEffect(() => {
+    if (!open) return;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [open ]);
 
   return (
     <header className="site">
@@ -30,9 +44,9 @@ export default function Header() {
           </span>
         </Link>
         <button
-          className="burger"
+          className={open ? 'burger open' : 'burger'}
           type="button"
-          aria-label="Open menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           aria-controls="mainNav"
           onClick={() => setOpen(!open)}
@@ -41,7 +55,16 @@ export default function Header() {
           <span></span>
           <span></span>
         </button>
+        <div
+          className={open ? 'drawer-overlay show' : 'drawer-overlay'}
+          aria-hidden="true"
+          onClick={() => setOpen(false)}
+        />
         <nav className={open ? 'links open' : 'links'} id="mainNav" aria-label="Main">
+          <div className="drawer-head">
+            <span className="drawer-name">Halal Corn Dog</span>
+            <span className="drawer-tag">Best Street Food</span>
+          </div>
           {NAV_LINKS.map((l) => (
             <Link
               key={l.key}

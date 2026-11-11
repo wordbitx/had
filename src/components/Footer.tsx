@@ -11,10 +11,12 @@ export default function Footer() {
             <span className="logo-badge">
               <Image src={IMG.logo} alt="Halal Corn Dog logo" width={1584} height={1616} />
             </span>
-            <div>
-              <div className="wordmark">Halal Corn Dog</div>
-              <div className="tag">BEST STREET FOOD</div>
-            </div>
+            <div className="wordmark">Halal Corn Dog</div>
+            <div className="tag">BEST STREET FOOD</div>
+            <p className="foot-tagline">
+              Golden Korean-style corn dogs, fried fresh at the stall and finished your way.
+              Crispy. Cheesy. 100% Halal.
+            </p>
           </div>
           <div>
             <div className="foot-title">Explore</div>
@@ -49,6 +51,7 @@ export default function Footer() {
         <div className="foot-bottom">
           <span>© Halal Corn Dog — Best Street Food.</span>
           <span>Crispy. Cheesy. 100% Halal.</span>
+          <a href="#top">Back to top ↑</a>
         </div>
       </div>
     </footer>
