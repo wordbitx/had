@@ -12,7 +12,7 @@ export default function HomePage() {
 
 
       
-      <section className="hero" aria-label="Three golden corn dogs with a long mozzarella cheese pull, on a green and yellow background"><div className="hero-media"><Image src={IMG.foodHero} alt="Three golden corn dogs with a long mozzarella cheese pull, on a green and yellow background" fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: '50% 55%' }} /></div>
+      <section className="hero" aria-label="Three golden corn dogs with a long mozzarella cheese pull, on a green and yellow background"><div className="hero-media"><Image src={IMG.foodHero} alt="Three golden corn dogs with a long mozzarella cheese pull, on a green and yellow background" fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: '50% 55%' }} /><p className="hero-topline hero-topline--photo" aria-hidden="true">It&apos;s <b>Corn Dog</b> Day</p></div>
         <div className="hero-inner">
           <p className="hero-topline">It's <b>Corn Dog</b> Day</p>
           <div className="hero-logo">
