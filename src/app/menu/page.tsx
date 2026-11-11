@@ -181,7 +181,8 @@ export default function MenuPage() {
         </div>
       </section>
 
-      
+      <p style={{ textAlign: 'center', fontWeight: 800, color: 'var(--blue)', textTransform: 'uppercase', letterSpacing: '.08em', fontSize: '.95rem', margin: '34px 0 0' }}>Fried fresh to order — worth the wait.</p>
+
       <Builder />
     
     </div>

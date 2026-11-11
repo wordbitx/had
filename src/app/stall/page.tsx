@@ -79,6 +79,7 @@ export default function StallPage() {
           <div className="section-head reveal">
             <span className="eyebrow">Up Close</span>
             <h2>The Gallery</h2>
+            <p>A look at what&apos;s frying — the crunch, the pull, the sauces.</p>
           </div>
           <div className="gallery-grid">
             <figure className="gallery-item reveal">

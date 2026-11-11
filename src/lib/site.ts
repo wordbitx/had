@@ -3,8 +3,8 @@
 // Their real content is fully preserved in the page components — to restore a
 // page to full content, set its value to false here (one small change per page).
 export const COMING_SOON = {
-  stall: true,
-  story: true,
+  stall: false,
+  story: false,
   'find-us': true,
   faq: true,
 } as const;
