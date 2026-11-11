@@ -89,31 +89,6 @@ export default function HomePage() {
       </section>
 
       
-      <section aria-label="Halal Corn Dog near me — coming soon">
-        <div className="map-head">
-          <div className="wrap reveal">
-            <span className="soon-pill">Coming Soon</span>
-            <h2>Halal Corn Dog Near Me</h2>
-            <p>Where can I buy halal corn dogs?</p>
-          </div>
-        </div>
-        <div className="map-frame">
-          <Image src={IMG.mapBrazil} width={2400} height={1040} alt="Map of Brazil and the surrounding region of South America, shown in a yellow-tinted style with no pins or marked locations" />
-        </div>
-        <div className="map-credit">
-          <a href="https://www.facebook.com/maps/attribution_terms" target="_blank" rel="noopener">© OpenStreetMap contributors, Map Data Legal Notices</a>
-        </div>
-        <div className="deliver-band">
-          <div className="wrap reveal">
-            <span className="soon-pill">Coming Soon</span>
-            <h2>Fresh From the Stall</h2>
-            <p>Markets, festivals and events — wherever the crowd is hungry, the green and yellow is serving. Build yours first, then come and get it hot.</p>
-            <Link className="btn btn-yellow" href="/menu">Build Your Corn Dog</Link>
-          </div>
-        </div>
-      </section>
-
-      
       <section className="section" style={{ paddingTop: '56px' }}>
         <div className="wrap">
           <div className="section-head reveal">
@@ -176,6 +151,31 @@ export default function HomePage() {
               <p>So that's what we do, every market day. Batter on, coating on, straight into the fryer, and finished with your sauces while it's still steaming.</p>
               <Link className="btn btn-yellow" href="/our-story" style={{ marginTop: '10px' }}>Read Our Story</Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section aria-label="Halal Corn Dog near me — coming soon">
+        <div className="map-head">
+          <div className="wrap reveal">
+            <span className="soon-pill">Coming Soon</span>
+            <h2>Halal Corn Dog Near Me</h2>
+            <p>Where can I buy halal corn dogs?</p>
+          </div>
+        </div>
+        <div className="map-frame">
+          <Image src={IMG.mapBrazil} width={2400} height={1040} alt="Map of Brazil and the surrounding region of South America, shown in a yellow-tinted style with no pins or marked locations" />
+        </div>
+        <div className="map-credit">
+          <a href="https://www.facebook.com/maps/attribution_terms" target="_blank" rel="noopener">© OpenStreetMap contributors, Map Data Legal Notices</a>
+        </div>
+        <div className="deliver-band">
+          <div className="wrap reveal">
+            <span className="soon-pill">Coming Soon</span>
+            <h2>Fresh From the Stall</h2>
+            <p>Markets, festivals and events — wherever the crowd is hungry, the green and yellow is serving. Build yours first, then come and get it hot.</p>
+            <Link className="btn btn-yellow" href="/menu">Build Your Corn Dog</Link>
           </div>
         </div>
       </section>
