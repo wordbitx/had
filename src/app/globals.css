@@ -261,7 +261,7 @@
         background:var(--yellow);
         border-bottom:6px solid var(--blue);
         text-align:center;
-        padding:80px 0 92px;
+        padding:112px 0 124px;
       }
       @media (max-width:700px){ .hero-band{padding:60px 0 70px} }
       .hero-band .kicker{
@@ -272,9 +272,9 @@
       .hero-band .kicker i{width:8px;height:8px;border-radius:50%;background:var(--yellow);flex:none}
       .hero-band h1{
         font-size:clamp(1.9rem,4.6vw,3.9rem);font-weight:900;color:var(--blue);
-        margin:20px auto 0;max-width:1200px;
+        margin:28px auto 0;max-width:1200px;
       }
-      .hero-band p.lede{font-size:1.13rem;font-weight:600;color:#2f4a3a;max-width:40rem;margin:16px auto 28px}
+      .hero-band p.lede{font-size:1.13rem;font-weight:600;color:#2f4a3a;max-width:40rem;margin:20px auto 36px}
       .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
       /* buttons: clean and premium — solid brand colours, soft shadow,
          no thick dark border, no hard offset shadow. */
@@ -292,7 +292,7 @@
       .btn-ghost:hover{transform:translateY(-2px);box-shadow:0 14px 24px -10px rgba(0,46,24,.45)}
       .btn-yellow{background:var(--yellow);color:var(--navy);box-shadow:0 10px 20px -10px rgba(0,46,24,.45)}
       .btn-yellow:hover{transform:translateY(-2px);box-shadow:0 14px 24px -10px rgba(0,46,24,.45)}
-      .hero-points{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-weight:700;color:var(--navy);font-size:.95rem;justify-content:center}
+      .hero-points{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:40px;font-weight:700;color:var(--navy);font-size:.95rem;justify-content:center}
       .hero-points span{display:inline-flex;align-items:center;gap:8px}
       .hero-points svg{width:19px;height:19px;flex:none}
 
