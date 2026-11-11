@@ -261,8 +261,9 @@
         background:var(--yellow);
         border-bottom:6px solid var(--blue);
         text-align:center;
-        padding:44px 0 52px;
+        padding:80px 0 92px;
       }
+      @media (max-width:700px){ .hero-band{padding:60px 0 70px} }
       .hero-band .kicker{
         display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;
         font-weight:800;font-size:.78rem;letter-spacing:.22em;padding:8px 16px;border-radius:999px;
