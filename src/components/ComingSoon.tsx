@@ -16,7 +16,7 @@ export default function ComingSoon({ title }: { title: string }) {
           <h1>{title}</h1>
           <p className="cs-display">Coming Soon</p>
           <p className="cs-line">This page is on its way — we are putting the finishing touches on it.</p>
-          <Link className="btn btn-orange" href="/menu">
+          <Link className="btn btn-yellow" href="/menu">
             See the Menu
           </Link>
         </div>

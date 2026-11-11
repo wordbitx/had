@@ -69,7 +69,7 @@ export default function FindUsPage() {
           <div className="wrap reveal">
             <h2>Fresh From the Stall</h2>
             <p>Markets, festivals and events — wherever the crowd is hungry, the green and yellow is serving. Build yours first, then come and get it hot.</p>
-            <Link className="btn btn-orange" href="/menu">Build Your Corn Dog</Link>
+            <Link className="btn btn-yellow" href="/menu">Build Your Corn Dog</Link>
           </div>
         </div>
       </section>

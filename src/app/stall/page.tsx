@@ -119,7 +119,7 @@ export default function StallPage() {
             </figure>
           </div>
           <div className="strip-cta">
-            <Link className="btn btn-orange" href="/menu">Build Yours on the Menu</Link>
+            <Link className="btn btn-yellow" href="/menu">Build Yours on the Menu</Link>
           </div>
         </div>
       </section>

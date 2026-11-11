@@ -16,6 +16,8 @@ export const IMG = {
   menuMozzarella: '/images/menu-mozzarella.webp',
   menuSauces: '/images/menu-sauces.webp',
   menuTrayFries: '/images/menu-tray-fries.webp',
+  menuRamen: '/images/menu-ramen.webp',
+  menuPizzaStyle: '/images/menu-pizza-style.webp',
 } as const;
 
 export type ImageKey = keyof typeof IMG;

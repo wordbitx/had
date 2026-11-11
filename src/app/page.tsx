@@ -83,7 +83,7 @@ export default function HomePage() {
             </figure>
           </div>
           <div className="strip-cta">
-            <Link className="btn btn-orange" href="/menu">View Menu</Link>
+            <Link className="btn btn-yellow" href="/menu">View Menu</Link>
           </div>
         </div>
       </section>
@@ -108,7 +108,7 @@ export default function HomePage() {
             <span className="soon-pill">Coming Soon</span>
             <h2>Fresh From the Stall</h2>
             <p>Markets, festivals and events — wherever the crowd is hungry, the green and yellow is serving. Build yours first, then come and get it hot.</p>
-            <Link className="btn btn-orange" href="/menu">Build Your Corn Dog</Link>
+            <Link className="btn btn-yellow" href="/menu">Build Your Corn Dog</Link>
           </div>
         </div>
       </section>
@@ -174,7 +174,7 @@ export default function HomePage() {
               <h2>The Stall Everyone Queues For</h2>
               <p>Halal Corn Dog started with one simple idea: the Korean corn dog everyone was watching online — the crunch, the cheese pull, the sauce zigzag — made properly halal, and made fresh in front of you.</p>
               <p>So that's what we do, every market day. Batter on, coating on, straight into the fryer, and finished with your sauces while it's still steaming.</p>
-              <Link className="btn btn-orange" href="/our-story" style={{ marginTop: '10px' }}>Read Our Story</Link>
+              <Link className="btn btn-yellow" href="/our-story" style={{ marginTop: '10px' }}>Read Our Story</Link>
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@ export default function MenuPage() {
         <div className="wrap">
           <p className="topline">It's Corn Dog Day</p>
           <h1>The Menu</h1>
-          <p>Four coatings, five fillings, six ways to finish it. Everything below is exactly how it works at the stall — then build yours and watch it come together.</p>
+          <p>Eight favourites on the menu — four coatings, five fillings, six ways to finish it. Everything below is exactly how it works at the stall — then build yours and watch it come together.</p>
         </div>
       </section>
 
@@ -37,7 +37,7 @@ export default function MenuPage() {
               </div>
             </article>
             <article className="menu-box reveal">
-              <div className="ph crop-tr" role="img" aria-label="Classic golden corn dog with melted cheese pulling from the end"></div>
+              <div className="ph photo" style={{ backgroundImage: 'url(/images/cheese-pull.webp)' }} role="img" aria-label="Classic golden corn dog with melted cheese pulling from the end"></div>
               <div className="body">
                 <span className="tag">The Original</span>
                 <h3>Classic Corn Dog</h3>
@@ -46,7 +46,7 @@ export default function MenuPage() {
               </div>
             </article>
             <article className="menu-box reveal">
-              <div className="ph crop-bl" role="img" aria-label="Ramen noodle corn dog with a cheese pull, served over crushed noodles"></div>
+              <div className="ph photo" style={{ backgroundImage: 'url(/images/menu-ramen.webp)' }} role="img" aria-label="Ramen noodle corn dog with a cheese pull, covered in crushed ramen noodles"></div>
               <div className="body">
                 <span className="tag">Street Favourite</span>
                 <h3>Ramen Noodle</h3>
@@ -63,10 +63,47 @@ export default function MenuPage() {
                 <a className="go" href="#build-anchor">Build it yours ↓</a>
               </div>
             </article>
+            <article className="menu-box reveal">
+              <div className="ph photo" style={{ backgroundImage: 'url(/images/menu-mozzarella.webp)' }} role="img" aria-label="Mozzarella corn dog pulled apart with a long melted cheese stretch"></div>
+              <div className="body">
+                <span className="tag">Maximum Cheese Pull</span>
+                <h3>Mozzarella Corn Dog</h3>
+                <p>Full mozzarella inside, pulled apart slow — the famous cheese pull, golden on the outside.</p>
+                <a className="go" href="#build-anchor">Build it yours ↓</a>
+              </div>
+            </article>
+            <article className="menu-box reveal">
+              <div className="ph photo" style={{ backgroundImage: 'url(/images/menu-sauces.webp)' }} role="img" aria-label="Four corn dogs on a plate drizzled with ketchup, mustard and mayonnaise"></div>
+              <div className="body">
+                <span className="tag">Fully Sauced</span>
+                <h3>Loaded Corn Dog</h3>
+                <p>Ketchup, mayonnaise and mustard drizzled over the top — the full sauce treatment, your way.</p>
+                <a className="go" href="#build-anchor">Build it yours ↓</a>
+              </div>
+            </article>
+            <article className="menu-box reveal">
+              <div className="ph photo" style={{ backgroundImage: 'url(/images/menu-tray-fries.webp)' }} role="img" aria-label="Corn dogs with toppings and crispy fries served in a wooden tray"></div>
+              <div className="body">
+                <span className="tag">The Full Tray</span>
+                <h3>Corn Dog &amp; Fries</h3>
+                <p>Golden corn dogs with crispy fries on the side, served fresh from the stall.</p>
+                <a className="go" href="#build-anchor">Build it yours ↓</a>
+              </div>
+            </article>
+            <article className="menu-box reveal">
+              <div className="ph photo" style={{ backgroundImage: 'url(/images/menu-pizza-style.webp)' }} role="img" aria-label="Corn dogs topped with melted mozzarella, tomato sauce and basil on a plate"></div>
+              <div className="body">
+                <span className="tag">Cheesy &amp; Rich</span>
+                <h3>Pizza-Style Corn Dog</h3>
+                <p>Melted mozzarella and tomato sauce over a golden corn dog — pizza flavours, street-food style.</p>
+                <a className="go" href="#build-anchor">Build it yours ↓</a>
+              </div>
+            </article>
           </div>
 
           <figure className="menu-photo-band reveal" style={{ marginLeft: '0', marginRight: '0' }}>
             <Image src={IMG.trays} width={1920} height={1280} alt="Three golden corn dogs served in kraft trays on a wooden table, with bowls of mustard, herb mayonnaise and ketchup, against a green wall and yellow tiles" />
+            <figcaption>Fresh from the stall</figcaption>
           </figure>
 
           <div className="menu-steps">
