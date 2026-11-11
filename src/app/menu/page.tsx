@@ -27,78 +27,78 @@ export default function MenuPage() {
             <p>Start with the coating. Every one is battered, rolled and fried fresh when you order.</p>
           </div>
           <div className="menu-grid">
-            <article className="menu-box reveal">
+            <a className="menu-box reveal" href="#build-anchor">
               <div className="ph photo" style={{ backgroundImage: 'url(/images/potato.webp)' }} role="img" aria-label="Potato corn dog covered in crispy diced potato, served on a white tray"></div>
               <div className="body">
                 <span className="tag">Extra Crunchy</span>
                 <h3>Potato Corn Dog</h3>
                 <p>Rolled in crispy diced potato — the loudest crunch on the menu.</p>
-                <a className="go" href="#build-anchor">Build it yours ↓</a>
+                <span className="go">Build it yours ↓</span>
               </div>
-            </article>
-            <article className="menu-box reveal">
+            </a>
+            <a className="menu-box reveal" href="#build-anchor">
               <div className="ph photo" style={{ backgroundImage: 'url(/images/cheese-pull.webp)' }} role="img" aria-label="Classic golden corn dog with melted cheese pulling from the end"></div>
               <div className="body">
                 <span className="tag">The Original</span>
                 <h3>Classic Corn Dog</h3>
                 <p>Smooth golden batter, fried until it shines.</p>
-                <a className="go" href="#build-anchor">Build it yours ↓</a>
+                <span className="go">Build it yours ↓</span>
               </div>
-            </article>
-            <article className="menu-box reveal">
+            </a>
+            <a className="menu-box reveal" href="#build-anchor">
               <div className="ph photo" style={{ backgroundImage: 'url(/images/menu-ramen.webp)' }} role="img" aria-label="Ramen noodle corn dog with a cheese pull, covered in crushed ramen noodles"></div>
               <div className="body">
                 <span className="tag">Street Favourite</span>
                 <h3>Ramen Noodle</h3>
                 <p>Wrapped in crushed ramen noodles — wild, craggy crunch.</p>
-                <a className="go" href="#build-anchor">Build it yours ↓</a>
+                <span className="go">Build it yours ↓</span>
               </div>
-            </article>
-            <article className="menu-box reveal">
+            </a>
+            <a className="menu-box reveal" href="#build-anchor">
               <div className="ph photo" style={{ backgroundImage: 'url(/images/crispy-rice.webp)' }} role="img" aria-label="Crispy rice corn dog coated in puffed rice, served on a white tray"></div>
               <div className="body">
                 <span className="tag">Light &amp; Crispy</span>
                 <h3>Crispy Rice</h3>
                 <p>Puffed rice that crackles as it fries — light and crisp.</p>
-                <a className="go" href="#build-anchor">Build it yours ↓</a>
+                <span className="go">Build it yours ↓</span>
               </div>
-            </article>
-            <article className="menu-box reveal">
+            </a>
+            <a className="menu-box reveal" href="#build-anchor">
               <div className="ph photo" style={{ backgroundImage: 'url(/images/menu-mozzarella.webp)' }} role="img" aria-label="Mozzarella corn dog pulled apart with a long melted cheese stretch"></div>
               <div className="body">
                 <span className="tag">Maximum Cheese Pull</span>
                 <h3>Mozzarella Corn Dog</h3>
                 <p>Full mozzarella inside — the famous cheese pull.</p>
-                <a className="go" href="#build-anchor">Build it yours ↓</a>
+                <span className="go">Build it yours ↓</span>
               </div>
-            </article>
-            <article className="menu-box reveal">
+            </a>
+            <a className="menu-box reveal" href="#build-anchor">
               <div className="ph photo" style={{ backgroundImage: 'url(/images/menu-sauces.webp)' }} role="img" aria-label="Four corn dogs on a plate drizzled with ketchup, mustard and mayonnaise"></div>
               <div className="body">
                 <span className="tag">Fully Sauced</span>
                 <h3>Loaded Corn Dog</h3>
                 <p>Ketchup, mayonnaise and mustard drizzled over the top.</p>
-                <a className="go" href="#build-anchor">Build it yours ↓</a>
+                <span className="go">Build it yours ↓</span>
               </div>
-            </article>
-            <article className="menu-box reveal">
+            </a>
+            <a className="menu-box reveal" href="#build-anchor">
               <div className="ph photo" style={{ backgroundImage: 'url(/images/menu-tray-fries.webp)' }} role="img" aria-label="Corn dogs with toppings and crispy fries served in a wooden tray"></div>
               <div className="body">
                 <span className="tag">The Full Tray</span>
                 <h3>Corn Dog &amp; Fries</h3>
                 <p>Golden corn dogs with crispy fries on the side.</p>
-                <a className="go" href="#build-anchor">Build it yours ↓</a>
+                <span className="go">Build it yours ↓</span>
               </div>
-            </article>
-            <article className="menu-box reveal">
+            </a>
+            <a className="menu-box reveal" href="#build-anchor">
               <div className="ph photo" style={{ backgroundImage: 'url(/images/menu-pizza-style.webp)' }} role="img" aria-label="Corn dogs topped with melted mozzarella, tomato sauce and basil on a plate"></div>
               <div className="body">
                 <span className="tag">Cheesy &amp; Rich</span>
                 <h3>Pizza-Style Corn Dog</h3>
                 <p>Melted mozzarella and tomato sauce, street-food style.</p>
-                <a className="go" href="#build-anchor">Build it yours ↓</a>
+                <span className="go">Build it yours ↓</span>
               </div>
-            </article>
+            </a>
           </div>
 
           <figure className="menu-photo-band reveal" style={{ marginLeft: '0', marginRight: '0' }}>
