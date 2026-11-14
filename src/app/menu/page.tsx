@@ -139,7 +139,7 @@ export default function MenuPage() {
             </div>
           </div>
 
-          <div className="drinks-section reveal">
+          <div className="drinks-section reveal reveal-left">
             <div className="section-head">
               <span className="eyebrow">Drinks</span>
               <h2>Soft Drinks</h2>
@@ -159,7 +159,7 @@ export default function MenuPage() {
             </div>
           </div>
 
-          <div className="drinks-section reveal">
+          <div className="drinks-section reveal reveal-right">
             <div className="section-head">
               <span className="eyebrow">For the Winter</span>
               <h2>Hot Drinks</h2>

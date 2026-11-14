@@ -9,7 +9,6 @@ export const IMG = {
   flatlay: '/images/flatlay.webp',
   traysVarieties: '/images/trays-varieties-v2.webp',
   chickenCornSoup: '/images/chicken-corn-soup.webp',
-  mapLondon: '/images/london-map-compact.webp',
   duo: '/images/duo.webp',
   cheesePull: '/images/cheese-pull.webp',
   crispyRice: '/images/crispy-rice.webp',

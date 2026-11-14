@@ -628,34 +628,47 @@
         width:min(1080px,calc(100% - 40px));margin:32px auto 0;
         border-radius:20px;border:1px solid rgba(0,73,37,.18);box-shadow:var(--shadow);
       }
-      .map-frame img{
-        width:100%;height:auto;display:block;
-      }
-      /* HTML pins over the map — positions are % of the frame, so they stay
-         on their area at every width. A proper teardrop marker (tip on the
-         exact % point) with a soft pulse ring and a clean label pill.
-         Pins mark areas, not exact stall spots. */
-      .map-pin{position:absolute;z-index:2;transform:translate(-50%,-100%)}
-      .map-pin .pin{position:relative;display:block;width:30px;height:30px}
-      .map-pin .pin svg{width:100%;height:100%;display:block;filter:drop-shadow(0 3px 5px rgba(0,0,0,.35))}
-      .map-pin .pin::after{
+      /* ---------- interactive map (Leaflet, real OSM streets) ----------
+         The map itself is a client component (ssr:false). It is fixed in
+         the layout at a proper readable height, but the visitor can drag
+         to pan and use the +/- buttons (or double-click / pinch) to zoom.
+         Scroll-wheel zoom is OFF so the map never hijacks page scrolling.
+         fitBounds with generous padding keeps every pin fully visible. */
+      .interactive-map{height:450px;width:100%;background:#e8e4d8;z-index:0}
+      .interactive-map--loading{display:grid;place-items:center;color:#5a7263;font-weight:700;font-size:.9rem;line-height:1.5;text-align:center;padding:20px}
+      .interactive-map--loading a{color:var(--blue);font-weight:800}
+      @media (max-width:700px){.interactive-map{height:380px}}
+      .leaflet-container{font-family:var(--font-archivo),system-ui,sans-serif}
+      .leaflet-control-zoom{border:1px solid rgba(0,73,37,.25) !important;box-shadow:0 6px 14px rgba(0,46,24,.25) !important;border-radius:10px !important;overflow:hidden}
+      .leaflet-control-zoom a{background:var(--blue) !important;color:var(--yellow) !important;border-bottom:1px solid rgba(255,211,3,.3) !important;width:34px !important;height:34px !important;line-height:34px !important}
+      .leaflet-control-zoom a:hover{background:var(--blue-deep) !important;color:#fff !important}
+      .leaflet-control-attribution{background:rgba(255,255,255,.88) !important;font-size:.68rem !important;color:#5a5312}
+      .leaflet-control-attribution a{color:#5a5312}
+      /* brand teardrop markers (Leaflet divIcon) — same pin as the old
+         static map: yellow fill, green stroke, pulse ring, label pill
+         beside the tip; flip puts the label on the left. */
+      .hcd-marker{background:none;border:0}
+      .hcd-pin{position:relative;display:block;width:30px;height:30px}
+      .hcd-pin .pin{position:relative;display:block;width:30px;height:30px}
+      .hcd-pin .pin svg{width:100%;height:100%;display:block;filter:drop-shadow(0 3px 5px rgba(0,0,0,.35))}
+      .hcd-pin::after{
         content:"";position:absolute;left:50%;top:100%;width:22px;height:22px;
         margin-left:-11px;margin-top:-11px;border-radius:50%;
         background:rgba(255,211,3,.55);z-index:-1;
         animation:pinPulse 2.4s ease-out infinite;
       }
       @keyframes pinPulse{0%{transform:scale(.5);opacity:.7}70%{transform:scale(1.7);opacity:0}100%{transform:scale(1.7);opacity:0}}
-      .map-pin .lbl{
+      .hcd-pin .lbl{
         position:absolute;left:26px;top:100%;transform:translateY(-50%);
         background:var(--blue);color:var(--yellow);font-weight:800;font-size:.85rem;
         padding:5px 12px;border-radius:999px;white-space:nowrap;
         box-shadow:0 2px 8px rgba(0,0,0,.3);
       }
-      .map-pin.flip .lbl{left:auto;right:26px}
+      .hcd-pin.flip .lbl{left:auto;right:26px}
       @media (max-width:700px){
-        .map-pin .pin{width:24px;height:24px}
-        .map-pin .lbl{font-size:.68rem;padding:4px 9px;left:20px}
-        .map-pin.flip .lbl{right:20px}
+        .hcd-pin .pin{width:24px;height:24px}
+        .hcd-pin .lbl{font-size:.68rem;padding:4px 9px;left:20px}
+        .hcd-pin.flip .lbl{right:20px}
       }
       /* caption under the compact map card (was a full-width yellow bar) */
       .map-credit{max-width:1080px;width:calc(100% - 40px);margin:12px auto 0;text-align:center}
@@ -710,14 +723,51 @@
         footer.site{padding:54px 0 26px}
       }
 
-      /* ---------- scroll reveal (Quran-style) ----------
+      /* ---------- scroll reveal (Quran-style, left/right slides) ----------
          Visible by DEFAULT. JavaScript only arms the hidden state: the
          inline script in layout adds `js-reveal` to <html> before first
          paint, and SiteEffects' observer adds `.in` as elements scroll
-         into view. If JS never runs, everything stays visible. */
-      .reveal{opacity:1;transform:none}
-      html.js-reveal .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+         into view. If JS never runs, everything stays visible.
+         Direction is carried by --rx/--ry variables only: the hidden
+         transform reads the variables, and the `.in` rule (higher
+         specificity, plain `transform:none`) always wins — so no
+         direction rule can ever trap an element off-screen. */
+      :root{--reveal-x:32px}
+      @media (max-width:700px){:root{--reveal-x:22px}}
+      .reveal{--rx:0;--ry:22px;opacity:1;transform:none}
+      html.js-reveal .reveal{opacity:0;transform:translate(var(--rx),var(--ry));transition:opacity .6s ease, transform .6s ease}
       html.js-reveal .reveal.in{opacity:1;transform:none}
+      /* Reveal wrapper directions (dir="left" / dir="right") */
+      html.js-reveal .reveal.reveal-left{--rx:calc(var(--reveal-x) * -1);--ry:0}
+      html.js-reveal .reveal.reveal-right{--rx:var(--reveal-x);--ry:0}
+      /* 4-col grids (menu, home strip) — odd cards from the left, even from the right */
+      html.js-reveal .menu-grid .reveal:nth-child(odd),
+      html.js-reveal .strip .reveal:nth-child(odd){--rx:calc(var(--reveal-x) * -1);--ry:0}
+      html.js-reveal .menu-grid .reveal:nth-child(even),
+      html.js-reveal .strip .reveal:nth-child(even){--rx:var(--reveal-x);--ry:0}
+      /* 3-col grids (gallery, find-us, story pillars) — left column from
+         the left, middle rises, right column from the right */
+      html.js-reveal .gallery-grid .reveal:nth-child(3n+1),
+      html.js-reveal .find-grid .reveal:nth-child(3n+1),
+      html.js-reveal .pillars .reveal:nth-child(3n+1){--rx:calc(var(--reveal-x) * -1);--ry:0}
+      html.js-reveal .gallery-grid .reveal:nth-child(3n+3),
+      html.js-reveal .find-grid .reveal:nth-child(3n+3),
+      html.js-reveal .pillars .reveal:nth-child(3n+3){--rx:var(--reveal-x);--ry:0}
+      /* two-column pairs — left from the left, right from the right */
+      html.js-reveal .menu-steps .reveal:first-child{--rx:calc(var(--reveal-x) * -1);--ry:0}
+      html.js-reveal .menu-steps .reveal:last-child{--rx:var(--reveal-x);--ry:0}
+      html.js-reveal .story-grid .story-photo{--rx:calc(var(--reveal-x) * -1);--ry:0}
+      html.js-reveal .story-grid .story-copy{--rx:var(--reveal-x);--ry:0}
+      /* builder — steps alternate, summary slides in from the right */
+      html.js-reveal .builder > div .step-block:nth-child(odd){--rx:calc(var(--reveal-x) * -1);--ry:0}
+      html.js-reveal .builder > div .step-block:nth-child(even){--rx:var(--reveal-x);--ry:0}
+      html.js-reveal .builder .summary.reveal{--rx:var(--reveal-x);--ry:0}
+      /* find-us blocks — festival hero from the left, follow-the-queue note from the right */
+      html.js-reveal .festival-hero.reveal{--rx:calc(var(--reveal-x) * -1);--ry:0}
+      html.js-reveal .find-note.reveal{--rx:var(--reveal-x);--ry:0}
+      /* faq — alternating questions */
+      html.js-reveal .faq details:nth-child(odd){--rx:calc(var(--reveal-x) * -1);--ry:0}
+      html.js-reveal .faq details:nth-child(even){--rx:var(--reveal-x);--ry:0}
       /* staggered grids — a gentle cascade across each row */
       html.js-reveal .menu-grid .reveal:nth-child(4n+2),
       html.js-reveal .strip .reveal:nth-child(4n+2){transition-delay:.07s}
@@ -744,6 +794,6 @@
         .marquee-track{animation:none}
         .reveal{opacity:1 !important;transform:none !important;transition:none}
         .hero-inner > *{animation:none}
-        .map-pin .pin::after{animation:none}
+        .hcd-pin::after{animation:none}
         .btn,.opt{transition:none}
       }

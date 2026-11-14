@@ -1,10 +1,27 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { IMG } from '@/lib/images';
 import Carousel from '@/components/Carousel';
 import Reveal from '@/components/Reveal';
-import MapPin from '@/components/MapPin';
+
+// Interactive Leaflet map — client-only (Leaflet touches window/document,
+// so it can never be server-rendered in this static export). The loading
+// placeholder keeps the frame's height on first paint; the noscript link
+// is the no-JS fallback.
+const InteractiveMap = dynamic(() => import('@/components/InteractiveMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="interactive-map interactive-map--loading">
+      <noscript>
+        <a href="https://www.openstreetmap.org/#map=13/51.5650/0.0300" target="_blank" rel="noreferrer">
+          View the map on OpenStreetMap
+        </a>
+      </noscript>
+    </div>
+  ),
+});
 
 export const metadata: Metadata = { title: 'Halal Corn Dog — Best Street Food' };
 
@@ -173,12 +190,9 @@ export default function HomePage() {
             <p>Where can I buy halal corn dogs?</p>
           </div>
         </div>
-        <Reveal>
+        <Reveal dir="left">
         <div className="map-frame">
-          <Image src={IMG.mapLondon} width={1049} height={420} alt="Real map of East London with pins marking Walthamstow, Ilford and Barking" />
-          <MapPin left="56.4%" top="7.1%" label="Walthamstow" />
-          <MapPin left="81.9%" top="42.8%" flip label="Ilford" />
-          <MapPin left="83.6%" top="64.9%" flip label="Barking" />
+          <InteractiveMap />
         </div>
         </Reveal>
         <div className="map-credit">
