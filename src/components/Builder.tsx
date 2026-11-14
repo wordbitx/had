@@ -13,10 +13,10 @@ const FILLINGS = [
   'Vegan Sausage',
 ];
 const SAUCES = [
-  { name: 'Tomato Ketchup', note: 'Heinz' },
-  { name: 'Real Mayonnaise', note: 'Heinz' },
-  { name: 'Yellow Mustard', note: 'Heinz' },
-  { name: 'Spicy Mayonnaise', note: "Hellmann's" },
+  { name: 'Spicy Mayonnaise', note: 'Our special sauce' },
+  { name: 'Tomato Ketchup', note: 'Sweet and tangy — the classic' },
+  { name: 'Real Mayonnaise', note: 'Smooth, rich and creamy' },
+  { name: 'Yellow Mustard', note: 'For that traditional taste' },
   { name: 'Sweet Sugar', note: 'The classic dusting' },
   { name: 'Sriracha Hot Chilli', note: 'Brings the heat' },
 ];
@@ -56,6 +56,7 @@ export default function Builder() {
     setCoating(DEFAULTS.coating);
     setFilling(DEFAULTS.filling);
     setSauces(DEFAULTS.sauces);
+    document.getElementById('build-anchor')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -130,7 +131,7 @@ export default function Builder() {
                     onClick={() => toggleSauce(s.name)}
                   >
                     {s.name}
-                    <span className="brand-note">{s.note}</span>
+                    <span className="sauce-note">{s.note}</span>
                   </button>
                 ))}
               </div>

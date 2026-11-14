@@ -95,8 +95,8 @@ export default function StallPage() {
               <figcaption>The Full Line-Up<small>All four coatings, ready to be built your way.</small></figcaption>
             </figure>
             <figure className="gallery-item reveal">
-              <Image src={IMG.trays} width={1920} height={1280} alt="Three golden corn dogs in kraft trays on a wooden table with bowls of mustard, herb mayonnaise and ketchup, against a green wall and yellow tiles" />
-              <figcaption>Trays &amp; Sauces<small>Three classics, served in the tray with the sauces ready.</small></figcaption>
+              <Image src={IMG.traysVarieties} width={1920} height={1280} alt="Three corn dogs in kraft trays — potato, ramen noodle and crispy rice — on a wooden table with bowls of mustard, herb mayonnaise and ketchup, against a green wall and yellow tiles" />
+              <figcaption>Trays &amp; Sauces<small>Potato, ramen noodle and crispy rice, served in the tray with the sauces ready.</small></figcaption>
             </figure>
             <figure className="gallery-item reveal">
               <Image src={IMG.duo} width={1920} height={1280} alt="Potato corn dog and crispy rice corn dog on white trays against a green and yellow background" />

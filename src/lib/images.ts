@@ -7,9 +7,10 @@ export const IMG = {
   fourVarieties: '/images/four-varieties.webp',
   foodHero: '/images/food-hero.webp',
   flatlay: '/images/flatlay.webp',
-  trays: '/images/trays.webp',
+  traysVarieties: '/images/trays-varieties-v2.webp',
+  chickenCornSoup: '/images/chicken-corn-soup.webp',
+  mapLondon: '/images/london-map-osm.webp',
   duo: '/images/duo.webp',
-  mapBrazil: '/images/map-brazil.png',
   cheesePull: '/images/cheese-pull.webp',
   crispyRice: '/images/crispy-rice.webp',
   potato: '/images/potato.webp',
@@ -19,8 +20,6 @@ export const IMG = {
   menuRamen: '/images/menu-ramen.webp',
   menuPizzaStyle: '/images/menu-pizza-style.webp',
   drinksSoft: '/images/drinks-soft.webp',
-  drinksGuarana: '/images/drinks-guarana.webp',
-  drinksFreshJuice: '/images/drinks-fresh-juice.webp',
 } as const;
 
 export type ImageKey = keyof typeof IMG;

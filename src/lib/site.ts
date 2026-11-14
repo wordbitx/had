@@ -5,7 +5,7 @@
 export const COMING_SOON = {
   stall: false,
   story: false,
-  'find-us': true,
+  'find-us': false,
   faq: true,
 } as const;
 

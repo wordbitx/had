@@ -156,23 +156,25 @@ export default function HomePage() {
       </section>
 
       
-      <section aria-label="Halal Corn Dog near me — coming soon">
+      <section aria-label="Halal Corn Dog near me">
         <div className="map-head">
           <div className="wrap reveal">
-            <span className="soon-pill">Coming Soon</span>
             <h2>Halal Corn Dog Near Me</h2>
             <p>Where can I buy halal corn dogs?</p>
           </div>
         </div>
         <div className="map-frame">
-          <Image src={IMG.mapBrazil} width={2400} height={1040} alt="Map of Brazil and the surrounding region of South America, shown in a yellow-tinted style with no pins or marked locations" />
+          <Image src={IMG.mapLondon} width={1049} height={515} alt="Real map of East London with pins marking Walthamstow, Ilford and Barking" />
+          <span className="map-pin" style={{ left: '56.4%', top: '17.5%' }}><span className="dot" /><span className="lbl">Walthamstow</span></span>
+          <span className="map-pin flip" style={{ left: '81.9%', top: '46.6%' }}><span className="dot" /><span className="lbl">Ilford</span></span>
+          <span className="map-pin flip" style={{ left: '83.6%', top: '64.6%' }}><span className="dot" /><span className="lbl">Barking</span></span>
         </div>
         <div className="map-credit">
-          <a href="https://www.facebook.com/maps/attribution_terms" target="_blank" rel="noopener">© OpenStreetMap contributors, Map Data Legal Notices</a>
+          <span>Pins mark the areas, not exact stall spots.</span>{' '}
+          <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a>
         </div>
         <div className="deliver-band">
           <div className="wrap reveal">
-            <span className="soon-pill">Coming Soon</span>
             <h2>Fresh From the Stall</h2>
             <p>Markets, festivals and events — wherever the crowd is hungry, the green and yellow is serving. Build yours first, then come and get it hot.</p>
             <Link className="btn btn-yellow" href="/menu">Build Your Corn Dog</Link>

@@ -14,7 +14,8 @@ export default function Footer() {
             <div className="wordmark">Halal Corn Dog</div>
             <div className="tag">BEST STREET FOOD</div>
             <p className="foot-tagline">
-              Golden Korean-style corn dogs, fried fresh at the stall and finished your way.
+              Golden Korean-style corn dogs,<br />
+              fried fresh at the site and finished your way.<br />
               Crispy. Cheesy. 100% Halal.
             </p>
           </div>

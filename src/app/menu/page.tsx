@@ -14,7 +14,7 @@ export default function MenuPage() {
         <div className="wrap">
           <p className="topline">It's Corn Dog Day</p>
           <h1>The Menu</h1>
-          <p>Eight favourites on the menu — four coatings, five fillings, six ways to finish it — plus cold drinks to go with them. Everything below is exactly how it works at the stall — then build yours and watch it come together.</p>
+          <p>Eight favourites on the menu — four coatings, five fillings, six ways to finish it — plus hot and cold drinks to go with them. Everything below is exactly how it works at the stall — then build yours and watch it come together.</p>
         </div>
       </section>
 
@@ -102,7 +102,7 @@ export default function MenuPage() {
           </div>
 
           <figure className="menu-photo-band reveal" style={{ marginLeft: '0', marginRight: '0' }}>
-            <Image src={IMG.trays} width={1920} height={1280} alt="Three golden corn dogs served in kraft trays on a wooden table, with bowls of mustard, herb mayonnaise and ketchup, against a green wall and yellow tiles" />
+            <Image src={IMG.traysVarieties} width={1920} height={1280} alt="Three corn dogs in kraft trays — potato, ramen noodle and crispy rice — on a wooden table, with bowls of mustard, herb mayonnaise and ketchup, against a green wall and yellow tiles" />
             <figcaption>Fresh from the stall</figcaption>
           </figure>
 
@@ -126,10 +126,10 @@ export default function MenuPage() {
                 <h3>Choose Your Condiments<small>As many as you like — go on</small></h3>
               </div>
               <ul className="menu-list">
-                <li>Tomato Ketchup <span className="note">Heinz</span></li>
-                <li>Real Mayonnaise <span className="note">Heinz</span></li>
-                <li>Yellow Mustard <span className="note">Heinz</span></li>
-                <li>Spicy Mayonnaise <span className="note">Hellmann's</span></li>
+                <li>Spicy Mayonnaise <span className="note">Our most famous sauce</span></li>
+                <li>Tomato Ketchup <span className="note">Sweet and tangy — the classic</span></li>
+                <li>Real Mayonnaise <span className="note">Smooth, rich and creamy</span></li>
+                <li>Yellow Mustard <span className="note">For that traditional taste</span></li>
                 <li>Sweet Sugar <span className="note">The classic dusting</span></li>
                 <li>Sriracha Hot Chilli <span className="note">Brings the heat</span></li>
               </ul>
@@ -158,23 +158,16 @@ export default function MenuPage() {
 
           <div className="drinks-section reveal">
             <div className="section-head">
-              <span className="eyebrow">From Brazil</span>
-              <h2>Brazilian Drinks</h2>
-              <p>Brazilian favourites to go with your corn dog — all halal, no alcohol.</p>
+              <span className="eyebrow">For the Winter</span>
+              <h2>Hot Drinks</h2>
+              <p>One winter warmer, served hot — add your favourite sauces and make it yours.</p>
             </div>
             <div className="drinks-grid">
-              <div className="drinks-photos">
-                <figure className="drinks-photo">
-                  <Image src={IMG.drinksGuarana} width={1920} height={1280} alt="Chilled green bottle of guaraná soft drink with a glass of ice, served with corn dogs" />
-                </figure>
-                <figure className="drinks-photo">
-                  <Image src={IMG.drinksFreshJuice} width={1920} height={1280} alt="Fresh orange juice with ice and oranges, served with corn dogs" />
-                </figure>
-              </div>
+              <figure className="drinks-photo">
+                <Image src={IMG.chickenCornSoup} width={1920} height={1280} alt="A steaming bowl of creamy chicken corn soup with chicken shreds and sweetcorn, on a wooden table" />
+              </figure>
               <ul className="drinks-list">
-                <li><b>Guaraná</b><span>Brazil's own soft drink — sweet, fizzy, ice cold.</span></li>
-                <li><b>Fresh Orange Juice</b><span>Suco de laranja — freshly squeezed oranges.</span></li>
-                <li><b>Açaí Smoothie</b><span>Thick açaí berry smoothie, served cold.</span></li>
+                <li><b>Chicken Corn Soup</b><span>Creamy chicken and sweetcorn soup, served steaming hot through the winters — add different sauces to make it yours.</span></li>
               </ul>
             </div>
           </div>

@@ -35,7 +35,7 @@ export default function StoryPage() {
               <span className="eyebrow on-blue">Our Story</span>
               <h2>The Stall Everyone Queues For</h2>
               <p>Halal Corn Dog started with one simple idea: the Korean corn dog everyone was watching online — the crunch, the cheese pull, the sauce zigzag — made properly halal, and made fresh in front of you.</p>
-              <p>So that's what we do, every market day. Batter on, coating on, straight into the fryer, and finished with your sauces while it's still steaming. Now we're frying them here in Brazil — same crunch, same cheese pull, 100% halal. Look for the green and yellow — and follow the queue.</p>
+              <p>So that's what we do, every market day. Batter on, coating on, straight into the fryer, and finished with your sauces while it's still steaming. Now we're frying them here in London — same crunch, same cheese pull, 100% halal. Look for the green and yellow — and follow the queue.</p>
             </div>
           </div>
           <div className="pillars">
@@ -61,8 +61,8 @@ export default function StoryPage() {
       <section className="section" style={{ paddingTop: '0' }}>
         <div className="wrap">
           <div className="menu-panel reveal" style={{ textAlign: 'center' }}>
-            <h2>Korean-Style, At Home in Brazil</h2>
-            <p>The idea comes from Korea&apos;s street stalls. The home is Brazil. Everything is 100% halal.</p>
+            <h2>Korean-Style, At Home in London</h2>
+            <p>The idea comes from Korea&apos;s street stalls. The home is London. Everything is 100% halal.</p>
           </div>
         </div>
       </section>
