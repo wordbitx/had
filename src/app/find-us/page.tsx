@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { IMG } from '@/lib/images';
 import ComingSoon from '@/components/ComingSoon';
 import { COMING_SOON } from '@/lib/site';
+import Reveal from '@/components/Reveal';
+import MapPin from '@/components/MapPin';
 
 export const metadata: Metadata = { title: 'Find Us — Halal Corn Dog' };
 
@@ -18,11 +20,13 @@ export default function FindUsPage() {
 
 
       <section className="page-band">
+        <Reveal>
         <div className="wrap">
           <p className="topline">Follow The Queue</p>
           <h1>Find Us</h1>
           <p>We&apos;re a street-food stall, so home is wherever the crowd is. Here&apos;s where you&apos;ll find us serving across London.</p>
         </div>
+        </Reveal>
       </section>
 
       <section className="section" style={{ paddingTop: '64px' }}>
@@ -73,12 +77,14 @@ export default function FindUsPage() {
             <p>Where can I buy halal corn dogs?</p>
           </div>
         </div>
+        <Reveal>
         <div className="map-frame">
-          <Image src={IMG.mapLondon} width={1049} height={515} alt="Real map of East London with pins marking Walthamstow, Ilford and Barking" />
-          <span className="map-pin" style={{ left: '56.4%', top: '17.5%' }}><span className="dot" /><span className="lbl">Walthamstow</span></span>
-          <span className="map-pin flip" style={{ left: '81.9%', top: '46.6%' }}><span className="dot" /><span className="lbl">Ilford</span></span>
-          <span className="map-pin flip" style={{ left: '83.6%', top: '64.6%' }}><span className="dot" /><span className="lbl">Barking</span></span>
+          <Image src={IMG.mapLondon} width={1049} height={420} alt="Real map of East London with pins marking Walthamstow, Ilford and Barking" />
+          <MapPin left="56.4%" top="7.1%" label="Walthamstow" />
+          <MapPin left="81.9%" top="42.8%" flip label="Ilford" />
+          <MapPin left="83.6%" top="64.9%" flip label="Barking" />
         </div>
+        </Reveal>
         <div className="map-credit">
           <span>Pins mark the areas, not exact stall spots.</span>{' '}
           <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a>

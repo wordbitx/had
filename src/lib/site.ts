@@ -1,12 +1,13 @@
 // ===== DEMO GATE — Coming Soon =====
-// Home and Menu are live. The pages below show Coming Soon for the client demo.
-// Their real content is fully preserved in the page components — to restore a
-// page to full content, set its value to false here (one small change per page).
+// All pages are live now (FAQ unlocked in Round 10). Every value is false.
+// The gate stays as the mechanism: to hide a page again, set it to true
+// here (one small change per page). Real page content is fully preserved
+// in the page components — the gate never deletes data.
 export const COMING_SOON = {
   stall: false,
   story: false,
   'find-us': false,
-  faq: true,
+  faq: false,
 } as const;
 
 export type ComingSoonKey = keyof typeof COMING_SOON;

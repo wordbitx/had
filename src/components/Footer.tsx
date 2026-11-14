@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { IMG } from '@/lib/images';
+import Reveal from '@/components/Reveal';
 
 export default function Footer() {
   return (
     <footer className="site">
       <div className="wrap">
+        <Reveal>
         <div className="foot-grid">
           <div className="foot-brand">
             <span className="logo-badge">
@@ -15,8 +17,8 @@ export default function Footer() {
             <div className="tag">BEST STREET FOOD</div>
             <p className="foot-tagline">
               Golden Korean-style corn dogs,<br />
-              fried fresh at the site and finished your way.<br />
-              Crispy. Cheesy. 100% Halal.
+              fried fresh at the site and finished<br />
+              your way. <span className="tagline-end">Crispy. Cheesy. 100% Halal.</span>
             </p>
           </div>
           <div>
@@ -54,6 +56,7 @@ export default function Footer() {
           <span>Crispy. Cheesy. 100% Halal.</span>
           <a href="#top">Back to top ↑</a>
         </div>
+        </Reveal>
       </div>
     </footer>
   );

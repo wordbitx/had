@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { IMG } from '@/lib/images';
 import Builder from '@/components/Builder';
+import Reveal from '@/components/Reveal';
 
 export const metadata: Metadata = { title: 'The Menu — Halal Corn Dog' };
 
@@ -11,11 +12,13 @@ export default function MenuPage() {
 
 
       <section className="page-band">
+        <Reveal>
         <div className="wrap">
           <p className="topline">It's Corn Dog Day</p>
           <h1>The Menu</h1>
           <p>Eight favourites on the menu — four coatings, five fillings, six ways to finish it — plus hot and cold drinks to go with them. Everything below is exactly how it works at the stall — then build yours and watch it come together.</p>
         </div>
+        </Reveal>
       </section>
 
       
@@ -174,7 +177,9 @@ export default function MenuPage() {
         </div>
       </section>
 
+      <Reveal>
       <p style={{ textAlign: 'center', fontWeight: 800, color: 'var(--blue)', textTransform: 'uppercase', letterSpacing: '.08em', fontSize: '.95rem', margin: '34px 0 0' }}>Fried fresh to order — worth the wait.</p>
+      </Reveal>
 
       <Builder />
     

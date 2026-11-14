@@ -5,6 +5,7 @@ import { IMG } from '@/lib/images';
 import Carousel from '@/components/Carousel';
 import ComingSoon from '@/components/ComingSoon';
 import { COMING_SOON } from '@/lib/site';
+import Reveal from '@/components/Reveal';
 
 export const metadata: Metadata = { title: 'From the Stall — Halal Corn Dog' };
 
@@ -19,11 +20,13 @@ export default function StallPage() {
 
 
       <section className="page-band">
+        <Reveal>
         <div className="wrap">
           <p className="topline">Fresh Off The Fryer</p>
           <h1>From the Stall</h1>
           <p>The crunch, the pull, the zigzag — every corn dog is fried to order and finished by hand, right in front of you.</p>
         </div>
+        </Reveal>
       </section>
 
       <section className="section" style={{ paddingTop: '64px' }}>
@@ -119,9 +122,11 @@ export default function StallPage() {
               <figcaption>Tray &amp; Fries<small>Corn dogs and fries, straight from the tray.</small></figcaption>
             </figure>
           </div>
+          <Reveal>
           <div className="strip-cta">
             <Link className="btn btn-yellow" href="/menu">Build Yours on the Menu</Link>
           </div>
+          </Reveal>
         </div>
       </section>
     

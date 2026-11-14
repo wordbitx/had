@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ComingSoon from '@/components/ComingSoon';
 import { COMING_SOON } from '@/lib/site';
+import Reveal from '@/components/Reveal';
 
 export const metadata: Metadata = { title: 'FAQ — Halal Corn Dog' };
 
@@ -16,11 +17,13 @@ export default function FaqPage() {
 
 
       <section className="page-band">
+        <Reveal>
         <div className="wrap">
           <p className="topline">Good To Know</p>
           <h1>Before You Bite</h1>
           <p>The questions everyone asks at the stall — answered before you even reach the front of the queue.</p>
         </div>
+        </Reveal>
       </section>
 
       <section className="section band-paper" style={{ paddingTop: '64px' }}>

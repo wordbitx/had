@@ -27,6 +27,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${archivo.variable} ${pacifico.variable} ${baloo.variable}`}>
       <body>
+        {/* Arms the scroll-reveal before first paint: without JS this never
+            runs and every .reveal stays visible (safe default). */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js-reveal')" }} />
         <Header />
         <main id="top">{children}</main>
         <Footer />

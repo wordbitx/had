@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { IMG } from '@/lib/images';
 import Carousel from '@/components/Carousel';
+import Reveal from '@/components/Reveal';
+import MapPin from '@/components/MapPin';
 
 export const metadata: Metadata = { title: 'Halal Corn Dog — Best Street Food' };
 
@@ -27,6 +29,7 @@ export default function HomePage() {
 
       
       <section className="hero-band">
+        <Reveal>
         <div className="wrap">
           <span className="kicker"><i></i>100% Halal · Street Food</span>
           <h1>Taste the Best Halal Street Food</h1>
@@ -41,12 +44,15 @@ export default function HomePage() {
             <span><svg viewBox="0 0 24 24" fill="none" stroke="#004925" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Vegan option too</span>
           </div>
         </div>
+        </Reveal>
       </section>
 
       
+      <Reveal>
       <div className="flatlay">
         <Image src={IMG.flatlay} width={2352} height={1008} alt="Overhead flat-lay of corn dogs, fries and small bowls of dipping sauces laid out on a light cloth" />
       </div>
+      </Reveal>
 
       <div className="marquee" aria-hidden="true">
         <div className="marquee-track">
@@ -82,9 +88,11 @@ export default function HomePage() {
               <figcaption>Crispy Rice<small>Light &amp; Crispy</small></figcaption>
             </figure>
           </div>
+          <Reveal>
           <div className="strip-cta">
             <Link className="btn btn-green" href="/menu">View Menu</Link>
           </div>
+          </Reveal>
         </div>
       </section>
 
@@ -131,9 +139,11 @@ export default function HomePage() {
                 <figcaption>The ramen crunch</figcaption>
               </figure>
 </Carousel>
+          <Reveal>
           <div className="strip-cta">
             <Link className="btn btn-blue" href="/stall">See the Gallery</Link>
           </div>
+          </Reveal>
         </div>
       </section>
 
@@ -163,12 +173,14 @@ export default function HomePage() {
             <p>Where can I buy halal corn dogs?</p>
           </div>
         </div>
+        <Reveal>
         <div className="map-frame">
-          <Image src={IMG.mapLondon} width={1049} height={515} alt="Real map of East London with pins marking Walthamstow, Ilford and Barking" />
-          <span className="map-pin" style={{ left: '56.4%', top: '17.5%' }}><span className="dot" /><span className="lbl">Walthamstow</span></span>
-          <span className="map-pin flip" style={{ left: '81.9%', top: '46.6%' }}><span className="dot" /><span className="lbl">Ilford</span></span>
-          <span className="map-pin flip" style={{ left: '83.6%', top: '64.6%' }}><span className="dot" /><span className="lbl">Barking</span></span>
+          <Image src={IMG.mapLondon} width={1049} height={420} alt="Real map of East London with pins marking Walthamstow, Ilford and Barking" />
+          <MapPin left="56.4%" top="7.1%" label="Walthamstow" />
+          <MapPin left="81.9%" top="42.8%" flip label="Ilford" />
+          <MapPin left="83.6%" top="64.9%" flip label="Barking" />
         </div>
+        </Reveal>
         <div className="map-credit">
           <span>Pins mark the areas, not exact stall spots.</span>{' '}
           <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a>

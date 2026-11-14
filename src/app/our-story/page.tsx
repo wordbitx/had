@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { IMG } from '@/lib/images';
 import ComingSoon from '@/components/ComingSoon';
 import { COMING_SOON } from '@/lib/site';
+import Reveal from '@/components/Reveal';
 
 export const metadata: Metadata = { title: 'Our Story — Halal Corn Dog' };
 
@@ -18,11 +19,13 @@ export default function StoryPage() {
 
 
       <section className="page-band">
+        <Reveal>
         <div className="wrap">
           <p className="topline">Why We Fry</p>
           <h1>Our Story</h1>
           <p>One simple idea, done properly: the Korean corn dog everyone loves — made 100% halal, and made fresh in front of you.</p>
         </div>
+        </Reveal>
       </section>
 
       <section className="section band-blue">

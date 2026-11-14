@@ -620,30 +620,45 @@
         margin:12px auto 0;font-weight:900;font-size:clamp(1rem,2.2vw,1.35rem);
         text-transform:uppercase;letter-spacing:.06em;color:var(--navy);
       }
-      .map-frame{position:relative;line-height:0;background:#e8e4d8;overflow:hidden}
+      /* compact premium card — inset from the edges, rounded, soft shadow.
+         The original teaser was a full-bleed slab; this keeps the same real
+         map but tames the sprawl. */
+      .map-frame{
+        position:relative;line-height:0;background:#e8e4d8;overflow:hidden;
+        width:min(1080px,calc(100% - 40px));margin:32px auto 0;
+        border-radius:20px;border:1px solid rgba(0,73,37,.18);box-shadow:var(--shadow);
+      }
       .map-frame img{
         width:100%;height:auto;display:block;
       }
       /* HTML pins over the map — positions are % of the frame, so they stay
-         on their area at every width. Pins mark areas, not exact stall spots. */
-      .map-pin{position:absolute;z-index:2}
-      .map-pin .dot{
-        position:absolute;left:0;top:0;width:18px;height:18px;border-radius:50%;
-        background:var(--yellow);border:3px solid var(--blue);
-        transform:translate(-50%,-50%);box-shadow:0 2px 8px rgba(0,0,0,.35);
+         on their area at every width. A proper teardrop marker (tip on the
+         exact % point) with a soft pulse ring and a clean label pill.
+         Pins mark areas, not exact stall spots. */
+      .map-pin{position:absolute;z-index:2;transform:translate(-50%,-100%)}
+      .map-pin .pin{position:relative;display:block;width:30px;height:30px}
+      .map-pin .pin svg{width:100%;height:100%;display:block;filter:drop-shadow(0 3px 5px rgba(0,0,0,.35))}
+      .map-pin .pin::after{
+        content:"";position:absolute;left:50%;top:100%;width:22px;height:22px;
+        margin-left:-11px;margin-top:-11px;border-radius:50%;
+        background:rgba(255,211,3,.55);z-index:-1;
+        animation:pinPulse 2.4s ease-out infinite;
       }
+      @keyframes pinPulse{0%{transform:scale(.5);opacity:.7}70%{transform:scale(1.7);opacity:0}100%{transform:scale(1.7);opacity:0}}
       .map-pin .lbl{
-        position:absolute;left:13px;top:0;transform:translateY(-50%);
+        position:absolute;left:26px;top:100%;transform:translateY(-50%);
         background:var(--blue);color:var(--yellow);font-weight:800;font-size:.85rem;
         padding:5px 12px;border-radius:999px;white-space:nowrap;
+        box-shadow:0 2px 8px rgba(0,0,0,.3);
       }
-      .map-pin.flip .lbl{left:auto;right:13px}
+      .map-pin.flip .lbl{left:auto;right:26px}
       @media (max-width:700px){
-        .map-pin .dot{width:14px;height:14px}
-        .map-pin .lbl{font-size:.68rem;padding:4px 9px;left:10px}
-        .map-pin.flip .lbl{right:10px}
+        .map-pin .pin{width:24px;height:24px}
+        .map-pin .lbl{font-size:.68rem;padding:4px 9px;left:20px}
+        .map-pin.flip .lbl{right:20px}
       }
-      .map-credit{background:var(--yellow);padding:8px 0;text-align:center}
+      /* caption under the compact map card (was a full-width yellow bar) */
+      .map-credit{max-width:1080px;width:calc(100% - 40px);margin:12px auto 0;text-align:center}
       .map-credit a{font-size:.78rem;font-weight:600;color:#5a5312;text-decoration:underline}
       .map-credit span{font-size:.78rem;font-weight:600;color:#5a5312}
       .deliver-band{background:var(--blue);text-align:center;padding:64px 0 70px}
@@ -662,7 +677,10 @@
       footer.site{background:var(--navy);color:#cdeedd;padding:64px 0 30px;border-top:3px solid var(--yellow)}
       .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px;align-items:start}
       .foot-brand{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
-      .foot-tagline{margin:0;color:#9fd3b4;font-size:.96rem;line-height:1.65;max-width:22rem}
+      /* three lines, near-equal measure (30 / 37 / 37 chars) so the stack
+         reads as a balanced block; the closer sits as a yellow tagline */
+      .foot-tagline{margin:0;color:#9fd3b4;font-size:1rem;line-height:1.7;max-width:24rem}
+      .foot-tagline .tagline-end{color:var(--yellow);font-weight:800;letter-spacing:.05em}
       .foot-brand .logo-badge{
         width:76px;height:76px;flex:none;border-radius:50%;overflow:hidden;
         border:3px solid var(--yellow);background:#fdfdf8;
@@ -692,11 +710,40 @@
         footer.site{padding:54px 0 26px}
       }
 
-      .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
-      .reveal.in{opacity:1;transform:none}
+      /* ---------- scroll reveal (Quran-style) ----------
+         Visible by DEFAULT. JavaScript only arms the hidden state: the
+         inline script in layout adds `js-reveal` to <html> before first
+         paint, and SiteEffects' observer adds `.in` as elements scroll
+         into view. If JS never runs, everything stays visible. */
+      .reveal{opacity:1;transform:none}
+      html.js-reveal .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+      html.js-reveal .reveal.in{opacity:1;transform:none}
+      /* staggered grids — a gentle cascade across each row */
+      html.js-reveal .menu-grid .reveal:nth-child(4n+2),
+      html.js-reveal .strip .reveal:nth-child(4n+2){transition-delay:.07s}
+      html.js-reveal .menu-grid .reveal:nth-child(4n+3),
+      html.js-reveal .strip .reveal:nth-child(4n+3){transition-delay:.14s}
+      html.js-reveal .menu-grid .reveal:nth-child(4n+4),
+      html.js-reveal .strip .reveal:nth-child(4n+4){transition-delay:.21s}
+      html.js-reveal .gallery-grid .reveal:nth-child(3n+2),
+      html.js-reveal .find-grid .reveal:nth-child(3n+2),
+      html.js-reveal .pillars .reveal:nth-child(3n+2){transition-delay:.07s}
+      html.js-reveal .gallery-grid .reveal:nth-child(3n+3),
+      html.js-reveal .find-grid .reveal:nth-child(3n+3),
+      html.js-reveal .pillars .reveal:nth-child(3n+3){transition-delay:.14s}
+      /* hero entrance — a soft rise on first paint (CSS only, no JS) */
+      .hero-inner > *{animation:heroRise .7s cubic-bezier(.22,.9,.28,1) both}
+      .hero-inner > *:nth-child(2){animation-delay:.08s}
+      .hero-inner > *:nth-child(3){animation-name:heroFade;animation-delay:.16s}
+      .hero-inner > *:nth-child(4){animation-delay:.24s}
+      .hero-inner > *:nth-child(6){animation-delay:.32s}
+      @keyframes heroRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+      @keyframes heroFade{from{opacity:0}to{opacity:1}}
       @media (prefers-reduced-motion: reduce){
         html{scroll-behavior:auto}
         .marquee-track{animation:none}
-        .reveal{opacity:1;transform:none;transition:none}
+        .reveal{opacity:1 !important;transform:none !important;transition:none}
+        .hero-inner > *{animation:none}
+        .map-pin .pin::after{animation:none}
         .btn,.opt{transition:none}
       }
