@@ -75,8 +75,8 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
-          <Link className="nav-cta" href="/menu" onClick={() => setOpen(false)}>
-            It&apos;s Corn Dog Day
+          <Link className="nav-cta" href="/menu#build-anchor" onClick={() => setOpen(false)}>
+            Order Online
           </Link>
         </nav>
       </div>

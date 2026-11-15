@@ -26,6 +26,7 @@ export default function Footer() {
             <nav aria-label="Footer">
               <Link href="/">Home</Link>
               <Link href="/menu">The Menu</Link>
+              <Link href="/menu#build-anchor">Order Online</Link>
               <Link href="/stall">From the Stall</Link>
               <Link href="/our-story">Our Story</Link>
               <Link href="/find-us">Find Us</Link>

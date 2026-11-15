@@ -12,6 +12,19 @@ export const COMING_SOON = {
 
 export type ComingSoonKey = keyof typeof COMING_SOON;
 
+// ===== ORDERS + FESTIVAL ENQUIRIES — WhatsApp =====
+// Orders and festival enquiries are sent through the website as a
+// WhatsApp message to the stall. TEST NUMBER ONLY: +92 371 0997900
+// (wa.me format "923710997900") — the client has NOT given her official
+// WhatsApp number yet. TODO: replace this with the client's official
+// WhatsApp number (international format, digits only, no "+") as soon
+// as she provides it. The "Copy details" button stays as a secondary
+// option alongside the WhatsApp send.
+export const WHATSAPP_NUMBER = '923710997900';
+
+// The three real pickup areas (client-given). No new locations invented.
+export const PICKUP_LOCATIONS = ['High Road, Ilford', 'High Road, Walthamstow', 'Barking Market'] as const;
+
 export const NAV_LINKS = [
   { href: '/', label: 'Home', key: 'home' },
   { href: '/menu', label: 'Menu', key: 'menu' },

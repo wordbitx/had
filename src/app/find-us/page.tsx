@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import ComingSoon from '@/components/ComingSoon';
 import { COMING_SOON } from '@/lib/site';
 import Reveal from '@/components/Reveal';
+import FestivalForm from '@/components/FestivalForm';
 
 // Interactive Leaflet map — client-only (Leaflet touches window/document,
 // so it can never be server-rendered in this static export). The loading
@@ -75,7 +76,12 @@ export default function FindUsPage() {
             <h2>Find Us Across the North</h2>
             <p>Find us at festivals, events, expos and melas across the North. We&apos;re regular official mobile vendors — festivals keep calling us back, and our special mobile team is ready for every event.</p>
             <p className="festival-note">More festival dates and updates coming soon.</p>
+            <a className="btn btn-yellow" href="#festival-enquiry" style={{ marginTop: '20px' }}>
+              Book us for your festival / event
+            </a>
           </div>
+
+          <FestivalForm />
 
           <div className="find-note reveal">
             <strong>Follow the queue</strong>
