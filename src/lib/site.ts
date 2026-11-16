@@ -30,6 +30,7 @@ export const NAV_LINKS = [
   { href: '/menu', label: 'Menu', key: 'menu' },
   { href: '/stall', label: 'From the Stall', key: 'stall' },
   { href: '/our-story', label: 'Our Story', key: 'story' },
+  { href: '/festivals', label: 'Festivals', key: 'festivals' },
   { href: '/find-us', label: 'Find Us', key: 'find-us' },
   { href: '/faq', label: 'FAQ', key: 'faq' },
 ] as const;

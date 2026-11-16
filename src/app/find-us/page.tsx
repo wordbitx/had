@@ -73,12 +73,11 @@ export default function FindUsPage() {
 
           <div className="festival-hero reveal">
             <span className="eyebrow on-blue">Festivals · Events · Expos · Melas</span>
-            <h2>Find Us Across the North</h2>
-            <p>Find us at festivals, events, expos and melas across the North. We&apos;re regular official mobile vendors — festivals keep calling us back, and our special mobile team is ready for every event.</p>
-            <p className="festival-note">More festival dates and updates coming soon.</p>
-            <a className="btn btn-yellow" href="#festival-enquiry" style={{ marginTop: '20px' }}>
-              Book us for your festival / event
-            </a>
+            <h2>Festivals Across England</h2>
+            <p>From London and around London to Luton, Bradford, Birmingham, Manchester, Middlesbrough and Newcastle — find us at festivals, melas and events across England.</p>
+            <Link className="btn btn-yellow" href="/festivals" style={{ marginTop: '20px' }}>
+              See our festivals
+            </Link>
           </div>
 
           <FestivalForm />
