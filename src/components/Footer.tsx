@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { IMG } from '@/lib/images';
 import Reveal from '@/components/Reveal';
+import FhrsBadge from '@/components/FhrsBadge';
 
 export default function Footer() {
   return (
@@ -20,6 +21,7 @@ export default function Footer() {
               fried fresh at the site and finished<br />
               your way. <span className="tagline-end">Crispy. Cheesy. 100% Halal.</span>
             </p>
+            <FhrsBadge size="small" />
           </div>
           <div>
             <div className="foot-title">Explore</div>
@@ -31,6 +33,7 @@ export default function Footer() {
               <Link href="/our-story">Our Story</Link>
               <Link href="/festivals">Festivals</Link>
               <Link href="/find-us">Find Us</Link>
+              <Link href="/food-hygiene">Food Hygiene</Link>
               <Link href="/faq">FAQ</Link>
             </nav>
           </div>

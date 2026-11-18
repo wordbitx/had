@@ -51,7 +51,7 @@ export default function FindUsPage() {
             <article className="find-card reveal">
               <div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd303" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l1.7-5h14.6L21 9"/><path d="M4 9v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M9 21v-6h6v6"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/></svg></div>
               <h3>High Road, Ilford</h3>
-              <p>High Road, Ilford, London, United Kingdom.</p>
+              <p>In front of PureGym / Exchange Mall, Ilford, London.</p>
             </article>
             <article className="find-card reveal">
               <div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd303" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 21V4"/><path d="M4 5c4-2 8 2 16 0v9c-8 2-12-2-16 0"/></svg></div>

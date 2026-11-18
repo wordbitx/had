@@ -22,6 +22,15 @@ export type ComingSoonKey = keyof typeof COMING_SOON;
 // option alongside the WhatsApp send.
 export const WHATSAPP_NUMBER = '923710997900';
 
+// ===== FOOD HYGIENE RATING — Food Standards Agency =====
+// Verified 18 Nov 2026 via the FSA page + FSA API:
+// https://ratings.food.gov.uk/business/1966853/halal-corn-dog
+// Business: Halal Corn Dog, Mobile caterer, Redbridge, postcode IG1,
+// Rating 5 (Very Good), inspected 6 July 2026, all three standards Good.
+// The badge asset is the official FSA online-rating SVG (style 1),
+// downloaded from ratings.food.gov.uk/embed/badges/fhrs/1/fhrs-badge-5.svg.
+export const FSA_RATING_URL = 'https://ratings.food.gov.uk/business/1966853/halal-corn-dog';
+
 // The three real pickup areas (client-given). No new locations invented.
 export const PICKUP_LOCATIONS = ['High Road, Ilford', 'High Road, Walthamstow', 'Barking Market'] as const;
 
@@ -32,5 +41,6 @@ export const NAV_LINKS = [
   { href: '/our-story', label: 'Our Story', key: 'story' },
   { href: '/festivals', label: 'Festivals', key: 'festivals' },
   { href: '/find-us', label: 'Find Us', key: 'find-us' },
+  { href: '/food-hygiene', label: 'Food Hygiene', key: 'food-hygiene' },
   { href: '/faq', label: 'FAQ', key: 'faq' },
 ] as const;

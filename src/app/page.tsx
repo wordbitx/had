@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import { IMG } from '@/lib/images';
 import Carousel from '@/components/Carousel';
 import Reveal from '@/components/Reveal';
+import FhrsBadge from '@/components/FhrsBadge';
 
 // Interactive Leaflet map — client-only (Leaflet touches window/document,
 // so it can never be server-rendered in this static export). The loading
@@ -60,6 +61,20 @@ export default function HomePage() {
             <span><svg viewBox="0 0 24 24" fill="none" stroke="#004925" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Fried fresh to order</span>
             <span><svg viewBox="0 0 24 24" fill="none" stroke="#004925" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Vegan option too</span>
           </div>
+        </div>
+        </Reveal>
+      </section>
+
+      {/* Food Hygiene Rating — compact trust strip on the landing page. */}
+      <section className="trust-strip" aria-label="Food Hygiene Rating 5 — Very Good">
+        <Reveal>
+        <div className="wrap trust-strip-inner">
+          <FhrsBadge size="compact" />
+          <p>
+            <strong>Rated 5 — Very Good</strong> by the Food Standards Agency.
+            We are highly professional and organised — and our rating is the proof.
+            <Link href="/food-hygiene"> See our rating →</Link>
+          </p>
         </div>
         </Reveal>
       </section>

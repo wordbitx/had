@@ -100,10 +100,10 @@
         display:block;font-family:var(--font-archivo),sans-serif;font-weight:800;font-size:.56rem;letter-spacing:.3em;
         color:#cdeedd;text-transform:uppercase;white-space:nowrap;margin-top:3px;
       }
-      nav.links{display:flex;gap:4px;margin-left:auto;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+      nav.links{display:flex;gap:4px;margin-left:auto;align-items:center;flex-wrap:nowrap;justify-content:flex-end}
       nav.links a{
-        color:#e8f7ee;text-decoration:none;font-weight:700;font-size:.92rem;
-        padding:9px 12px;border-radius:999px;
+        color:#e8f7ee;text-decoration:none;font-weight:700;font-size:.88rem;white-space:nowrap;
+        padding:8px 9px;border-radius:999px;
       }
       nav.links a:hover{background:rgba(255,255,255,.14);color:#fff}
       nav.links a[aria-current="page"]{background:var(--yellow);color:var(--navy)}
@@ -124,7 +124,7 @@
       .burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
       .drawer-head{display:none}
       .drawer-overlay{display:none}
-      @media (max-width:960px){
+      @media (max-width:1240px){
         .drawer-overlay{
           display:block;position:fixed;inset:0;z-index:65;
           background:rgba(0,25,12,.55);
@@ -845,4 +845,60 @@
         .hero-inner > *{animation:none}
         .hcd-pin::after{animation:none}
         .btn,.opt{transition:none}
+      }
+
+      /* ---------- food hygiene rating badge ----------
+         The badge is a built inline-SVG component (see FhrsBadge.tsx) in
+         the official FSA format: green panel + 0–5 circles, black
+         "VERY GOOD" panel. The badge itself is the official format
+         (green #84BD00 / black / white); everything around it stays in
+         the site palette (green + yellow). */
+      .fhrs-badge{display:inline-block;line-height:0;text-decoration:none}
+      .fhrs-badge svg{display:block;width:100%;height:auto}
+      .fhrs-badge--large{width:min(420px,100%)}
+      .fhrs-badge--compact{width:240px}
+      .fhrs-badge--small{width:170px}
+      .fhrs-badge:hover{opacity:.92}
+      .fhrs-badge:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:10px}
+
+      /* Home trust strip — slim band under the hero band. */
+      .trust-strip{background:#fff;border-bottom:1px solid var(--line);padding:26px 0}
+      .trust-strip-inner{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;text-align:left}
+      .trust-strip p{margin:0;color:var(--muted);font-weight:600;font-size:1.02rem;max-width:34rem}
+      .trust-strip p strong{color:var(--blue)}
+      .trust-strip p a{color:var(--blue);font-weight:800;text-decoration:underline;text-underline-offset:3px}
+      .trust-strip p a:hover{color:var(--navy)}
+      @media (max-width:700px){.trust-strip-inner{gap:16px;text-align:center}}
+
+      /* Food Hygiene page card. */
+      .hygiene-card{
+        background:var(--card);border:1px solid rgba(0,73,37,.18);border-radius:22px;
+        box-shadow:var(--shadow);padding:44px 40px;text-align:center;
+        max-width:760px;margin-inline:auto;
+      }
+      .hygiene-card .fhrs-badge{margin-bottom:26px}
+      .hygiene-line{font-size:1.25rem;font-weight:800;color:var(--blue);margin:0 auto 10px;max-width:34rem}
+      .hygiene-sub{color:var(--muted);font-weight:600;margin:0 auto 28px;max-width:32rem}
+      .hygiene-standards{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:12px;text-align:left}
+      .hygiene-standards li{
+        display:flex;align-items:center;justify-content:space-between;gap:16px;
+        background:var(--paper);border:1px solid rgba(0,73,37,.16);border-radius:14px;padding:14px 18px;
+      }
+      .hygiene-standards li > div strong{display:block;color:var(--blue);font-size:1rem}
+      .hygiene-standards li > div span{color:var(--muted);font-weight:600;font-size:.95rem}
+      .hygiene-good{
+        flex:none;background:var(--yellow);color:var(--blue);font-weight:800;font-size:.92rem;
+        padding:7px 16px;border-radius:999px;
+      }
+      .hygiene-facts{
+        margin:0 0 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:left;
+      }
+      .hygiene-facts div{background:var(--paper);border:1px solid rgba(0,73,37,.16);border-radius:14px;padding:14px 16px}
+      .hygiene-facts dt{font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+      .hygiene-facts dd{margin:4px 0 0;font-weight:800;color:var(--blue);font-size:1rem}
+      .hygiene-note{color:var(--muted);font-weight:600;font-size:.92rem;margin:14px 0 0}
+      @media (max-width:700px){
+        .hygiene-card{padding:32px 22px}
+        .hygiene-facts{grid-template-columns:1fr}
+        .hygiene-standards li{flex-direction:column;align-items:flex-start;gap:8px}
       }
