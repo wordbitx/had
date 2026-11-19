@@ -98,7 +98,10 @@ export default function Footer() {
           </div>
         </div>
         <div className="foot-bottom">
-          <span className="foot-copy">© Halal Corn Dog — Best Street Food. Crispy. Cheesy. 100% Halal.</span>
+          <div className="foot-copy">
+            <span>© Halal Corn Dog — Best Street Food.</span>
+            <span>Crispy. Cheesy. 100% Halal.</span>
+          </div>
           <a href="#top">Back to top ↑</a>
         </div>
         </Reveal>
