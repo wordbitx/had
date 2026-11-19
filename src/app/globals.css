@@ -737,9 +737,19 @@
       .foot-soc-ic{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--blue);border:1px solid rgba(255,255,255,.28);color:#cdeedd;flex:none;transition:border-color .2s ease,color .2s ease,transform .2s ease}
       .foot-soc:hover .foot-soc-ic,.foot-soc:focus-visible .foot-soc-ic{color:var(--yellow);border-color:var(--yellow);transform:translateY(-2px)}
       .foot-soc-ic svg{width:15px;height:15px;flex:none}
-      .foot-bottom{border-top:1px solid rgba(255,255,255,.16);margin-top:48px;padding-top:22px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:.88rem}
+      .foot-bottom{border-top:1px solid rgba(255,255,255,.16);margin-top:48px;padding-top:22px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:nowrap;white-space:nowrap;font-size:.88rem}
       .foot-bottom a{color:#cdeedd;text-decoration:none;font-weight:700}
       .foot-bottom a:hover{color:var(--yellow)}
+      /* Bottom line: ONE line everywhere. The merged line measures
+         ~30em in Archivo (measured from the real font file), so on a
+         phone it needs a viewport-scaled size to fit 360px (320px of
+         content) — at the desktop .88rem it would overflow. "Back to
+         top" cannot share a phone line at readable size, so it hides
+         at ≤600px; desktop keeps it. */
+      @media (max-width:600px){
+        .foot-bottom{font-size:min(.88rem,2.6vw);justify-content:center}
+        .foot-bottom a{display:none}
+      }
       @media (max-width:880px){
         .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
         .foot-brand{grid-column:1 / -1}

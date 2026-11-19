@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { IMG } from '@/lib/images';
 import Reveal from '@/components/Reveal';
 import FhrsBadge from '@/components/FhrsBadge';
-import { EMAIL_INFO, PHONE_DISPLAY, PHONE_TEL, SITE_DOMAIN, SITE_URL } from '@/lib/site';
+import { EMAIL_INFO, PHONE_DISPLAY, SITE_DOMAIN, SITE_URL, WHATSAPP_NUMBER } from '@/lib/site';
 
 export default function Footer() {
   return (
@@ -66,7 +66,7 @@ export default function Footer() {
                 <a href={`mailto:${EMAIL_INFO}`}>{EMAIL_INFO}</a>
               </li>
               <li>
-                <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer">{PHONE_DISPLAY}</a>
               </li>
             </ul>
           </div>
@@ -98,8 +98,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="foot-bottom">
-          <span>© Halal Corn Dog — Best Street Food.</span>
-          <span>Crispy. Cheesy. 100% Halal.</span>
+          <span className="foot-copy">© Halal Corn Dog — Best Street Food. Crispy. Cheesy. 100% Halal.</span>
           <a href="#top">Back to top ↑</a>
         </div>
         </Reveal>
