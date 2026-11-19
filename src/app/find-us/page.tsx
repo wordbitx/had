@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import ComingSoon from '@/components/ComingSoon';
-import { COMING_SOON } from '@/lib/site';
+import { COMING_SOON, EMAIL_QUERY } from '@/lib/site';
 import Reveal from '@/components/Reveal';
 import FestivalForm from '@/components/FestivalForm';
 
@@ -81,6 +81,8 @@ export default function FindUsPage() {
           </div>
 
           <FestivalForm />
+
+          <p className="find-contact reveal">For enquiries, email us at <a href={`mailto:${EMAIL_QUERY}`}>{EMAIL_QUERY}</a>.</p>
 
           <div className="find-note reveal">
             <strong>Follow the queue</strong>

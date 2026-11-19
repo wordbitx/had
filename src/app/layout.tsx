@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SiteEffects from '@/components/SiteEffects';
+import { SITE_URL } from '@/lib/site';
 
 const archivo = Archivo({
   subsets: ['latin'],
@@ -18,9 +19,19 @@ const baloo = Baloo_2({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'Halal Corn Dog — Best Street Food',
   description:
     'Golden Korean-style corn dogs, fried fresh at the stall and finished your way — crunchy coatings, a proper mozzarella pull, and sauces squeezed on to order. 100% halal.',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Halal Corn Dog — Best Street Food',
+    description:
+      'Golden Korean-style corn dogs, fried fresh at the stall and finished your way — crunchy coatings, a proper mozzarella pull, and sauces squeezed on to order. 100% halal.',
+    url: SITE_URL,
+    siteName: 'Halal Corn Dog',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

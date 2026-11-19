@@ -2,9 +2,9 @@ import { WHATSAPP_NUMBER } from './site';
 
 // WhatsApp send helpers — shared by the online order flow and the
 // festival enquiry form. The stall's number lives in ONE place
-// (WHATSAPP_NUMBER in src/lib/site.ts) and is EMPTY until the client
-// gives it. waLink() returns null while it is unset, so the UI can
-// fall back to a "Copy details" button instead of a dead link.
+// (WHATSAPP_NUMBER in src/lib/site.ts). waLink() returns null while it
+// is unset, so the UI can fall back to a "Copy details" button instead
+// of a dead link.
 export function waLink(message: string): string | null {
   if (!WHATSAPP_NUMBER) return null;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

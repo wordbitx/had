@@ -14,13 +14,12 @@ export type ComingSoonKey = keyof typeof COMING_SOON;
 
 // ===== ORDERS + FESTIVAL ENQUIRIES — WhatsApp =====
 // Orders and festival enquiries are sent through the website as a
-// WhatsApp message to the stall. TEST NUMBER ONLY: +92 371 0997900
-// (wa.me format "923710997900") — the client has NOT given her official
-// WhatsApp number yet. TODO: replace this with the client's official
-// WhatsApp number (international format, digits only, no "+") as soon
-// as she provides it. The "Copy details" button stays as a secondary
-// option alongside the WhatsApp send.
-export const WHATSAPP_NUMBER = '923710997900';
+// WhatsApp message to the stall. OFFICIAL NUMBER: +44 7405 438785
+// (wa.me format "447405438785") — the client's official UK number,
+// confirmed 19 Nov 2026. The old test number is withdrawn and
+// must not be used anywhere. The "Copy details" button stays as a
+// secondary option alongside the WhatsApp send.
+export const WHATSAPP_NUMBER = '447405438785';
 
 // ===== FOOD HYGIENE RATING — Food Standards Agency =====
 // Verified 18 Nov 2026 via the FSA page + FSA API:
@@ -30,6 +29,21 @@ export const WHATSAPP_NUMBER = '923710997900';
 // The badge asset is the official FSA online-rating SVG (style 1),
 // downloaded from ratings.food.gov.uk/embed/badges/fhrs/1/fhrs-badge-5.svg.
 export const FSA_RATING_URL = 'https://ratings.food.gov.uk/business/1966853/halal-corn-dog';
+
+// ===== SITE — live domain + contact =====
+// The client bought halalcorndog.com on Spaceship (19 Nov 2026) and
+// added it to the same Vercel project; it is the live domain now.
+export const SITE_URL = 'https://halalcorndog.com';
+export const SITE_DOMAIN = 'halalcorndog.com';
+export const EMAIL_INFO = 'info@halalcorndog.com';
+export const EMAIL_QUERY = 'query@halalcorndog.com';
+
+// ===== CONTACT PHONE — display number for the footer =====
+// User-given 19 Nov 2026: +44 7405 438785. Display contact number.
+// This is the same number as WHATSAPP_NUMBER above (the official
+// number for orders + festival enquiries on WhatsApp).
+export const PHONE_DISPLAY = '+44 7405 438785';
+export const PHONE_TEL = '+447405438785';
 
 // The three real pickup areas (client-given). No new locations invented.
 export const PICKUP_LOCATIONS = ['High Road, Ilford', 'High Road, Walthamstow', 'Barking Market'] as const;
