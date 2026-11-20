@@ -44,7 +44,7 @@ export default function AboutPage() {
         <Reveal>
         <div className="wrap">
           <p className="topline">About Us</p>
-          <h1>A real London street-food business</h1>
+          <h1>Halal Corn Dog</h1>
           <p>Halal Corn Dog is a registered UK company trading at London&apos;s markets — golden Korean-style corn dogs, 100% halal, fried fresh at the stall and finished your way.</p>
         </div>
         </Reveal>
