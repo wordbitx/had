@@ -77,10 +77,10 @@ export default function AboutPage() {
 
             <div className="about-links">
               <a className="btn btn-blue" href={COMPANIES_HOUSE_URL} target="_blank" rel="noreferrer">
-                See our company record on GOV.UK
+                Company Record on GOV.UK
               </a>
               <a className="btn btn-yellow" href={FSA_RATING_URL} target="_blank" rel="noreferrer">
-                See our food hygiene rating
+                Food Hygiene Rating
               </a>
             </div>
             <p className="about-note">

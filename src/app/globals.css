@@ -377,7 +377,7 @@
         text-transform:uppercase;color:var(--blue);letter-spacing:.01em;line-height:1.1;
       }
       .strip-card figcaption small{display:block;margin-top:5px;font-weight:700;font-size:.82rem;letter-spacing:.12em;color:#5a7263}
-      .strip-cta{text-align:center;margin-top:40px}
+      .strip-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:40px}
 
       /* ---------- menu page — dense compact grid (Bunsik-style) ----------
          Small photo on top, name, one line. 4 across on desktop, 3 on
@@ -951,9 +951,11 @@
       .about-facts div{background:var(--paper);border:1px solid rgba(0,73,37,.16);border-radius:14px;padding:14px 16px}
       .about-facts dt{font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
       .about-facts dd{margin:4px 0 0;font-weight:800;color:var(--blue);font-size:1rem}
-      .about-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:6px}
+      .about-links{display:flex;gap:16px;justify-content:center;margin-bottom:6px}
+      .about-links .btn{flex:1 1 0;min-width:0;line-height:1.4}
       .about-note{color:var(--muted);font-weight:600;font-size:.92rem;margin:14px 0 0}
       @media (max-width:700px){
         .about-card{padding:32px 22px}
         .about-facts{grid-template-columns:1fr}
+        .about-links{flex-direction:column;align-items:stretch;gap:14px}
       }
