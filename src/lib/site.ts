@@ -21,7 +21,13 @@ export type ComingSoonKey = keyof typeof COMING_SOON;
 // secondary option alongside the WhatsApp send.
 export const WHATSAPP_NUMBER = '447405438785';
 
-// ===== FOOD HYGIENE RATING — Food Standards Agency =====
+// ===== COMPANY RECORD — Companies House (GOV.UK) =====
+// Verified 20 Nov 2026: HALAL CORN DOG LTD, Co. No. 16572901,
+// incorporated 10 July 2025. The sister confirmed (20 Nov 22:29)
+// the About page may link this GOV.UK record, but must carry NO
+// personal name.
+export const COMPANIES_HOUSE_URL =
+  'https://find-and-update.company-information.service.gov.uk/company/16572901';
 // Verified 18 Nov 2026 via the FSA page + FSA API:
 // https://ratings.food.gov.uk/business/1966853/halal-corn-dog
 // Business: Halal Corn Dog, Mobile caterer, Redbridge, postcode IG1,
@@ -31,12 +37,14 @@ export const WHATSAPP_NUMBER = '447405438785';
 export const FSA_RATING_URL = 'https://ratings.food.gov.uk/business/1966853/halal-corn-dog';
 
 // ===== SITE — live domain + contact =====
-// The client bought halalcorndog.com on Spaceship (19 Nov 2026) and
-// added it to the same Vercel project; it is the live domain now.
-export const SITE_URL = 'https://halalcorndog.com';
-export const SITE_DOMAIN = 'halalcorndog.com';
-export const EMAIL_INFO = 'info@halalcorndog.com';
-export const EMAIL_QUERY = 'query@halalcorndog.com';
+// The client bought halalcorndog.co.uk on Spaceship (20 Nov 2026);
+// it is the primary domain now. halalcorndog.com (bought 19 Nov 2026)
+// is still owned by WordbitX — keep it as a redirect to .co.uk so
+// old links do not break.
+export const SITE_URL = 'https://halalcorndog.co.uk';
+export const SITE_DOMAIN = 'halalcorndog.co.uk';
+export const EMAIL_INFO = 'info@halalcorndog.co.uk';
+export const EMAIL_QUERY = 'query@halalcorndog.co.uk';
 
 // ===== CONTACT PHONE — display number for the footer =====
 // User-given 19 Nov 2026: +44 7405 438785. Display contact number.
@@ -53,6 +61,7 @@ export const NAV_LINKS = [
   { href: '/menu', label: 'Menu', key: 'menu' },
   { href: '/stall', label: 'From the Stall', key: 'stall' },
   { href: '/our-story', label: 'Our Story', key: 'story' },
+  { href: '/about', label: 'About', key: 'about' },
   { href: '/festivals', label: 'Festivals', key: 'festivals' },
   { href: '/find-us', label: 'Find Us', key: 'find-us' },
   { href: '/food-hygiene', label: 'Food Hygiene', key: 'food-hygiene' },
